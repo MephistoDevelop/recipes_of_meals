@@ -23,3 +23,44 @@ width: 78px;
 height: 78px;
 border-radius: 50%;
 }
+.hover01 figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover01 figure:hover img {
+	-webkit-transform: scale(1.3);
+  transform: scale(1.2);
+}
+figure {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+}
+#random-list-container{
+  padding:3% 0;
+  border-bottom: 5px solid rgba(155,155,155,0.4);
+}
+#navbar-container{
+  padding: 2% 0;
+    align-items: baseline;
+    height: 80px;
+    border-bottom: 5px solid rgba(155,155,155,0.4);
+}
+.random-item-container{
+  margin: 0 2%;
+}
+.title-random-container{
+  text-align: center;
+    font-size: 14px;
+}
+#random-header{
+  font-size: 21px;
+  font-family: monospace;
+  font-weight: 900;
+  margin-left: 4%;
+  margin: 1% 3%;
+  color: rgba(136, 124, 27, 0.7);
+}

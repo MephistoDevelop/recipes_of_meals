@@ -1,5 +1,6 @@
 const initialState = {
-  counter: 0
+  counter: 0,
+  recipes: []
 };
 
 const reducer = (state = initialState, action) => {

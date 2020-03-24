@@ -116,3 +116,15 @@ This project is [MIT](lic.url) licensed.
 ### Author:
 
 [Cristian Ines (MephistoDevelop)](https://github.com/MephistoDevelop)
+
+
+All Categories:
+https://www.themealdb.com/api/json/v1/1/categories.php
+
+Search by category:
+
+https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
+
+Random Item:
+
+https://www.themealdb.com/api/json/v1/1/random.php

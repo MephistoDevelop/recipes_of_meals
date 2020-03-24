@@ -1,0 +1,25 @@
+#root{
+  display: flex;
+  justify-content: center;
+  background: rgba(155,155,155,0.3);;
+}
+#title-container {
+  text-align: center;
+  font-size: 24px;
+  font-family: monospace;
+  font-weight: 900;
+  color: rgba(136, 124, 27, 0.7);
+  width: 30%;
+}
+#filter-container{
+  width: 70%;
+}
+#main-container{
+  width: 80%;
+  background-color: white;
+}
+.random-img{
+width: 78px;
+height: 78px;
+border-radius: 50%;
+}

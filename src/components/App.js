@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavBar } from './NavBar';
+import { RandomList } from './RandomList';
 import { increaseCounter, decreaseCounter } from '../actions/actions';
 import { useDispatch, useSelector, } from 'react-redux';
 
@@ -8,11 +10,9 @@ export const App = () => {
   }));
   const dispatch = useDispatch();
   return (
-    <div>
-      MephistoDevelop Meal Recipes: Count { JSON.stringify(counter)} <br />
-      <button onClick={() => dispatch(increaseCounter())}>Counter++</button>
-      <button onClick={() => dispatch(decreaseCounter())}>Counter--</button>
-      <p> Counter {counter.counter} </p>
+    <div id="main-container">
+      <NavBar />
+      <RandomList />
     </div>
   );
 };

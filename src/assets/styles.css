@@ -19,19 +19,19 @@
   background-color: white;
 }
 .random-img{
-width: 78px;
-height: 78px;
+width: 120px;
+height: 100px;
 border-radius: 50%;
 }
 .hover01 figure img {
 	-webkit-transform: scale(1);
 	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
 }
 .hover01 figure:hover img {
-	-webkit-transform: scale(1.3);
-  transform: scale(1.2);
+	-webkit-transform: scale(1.18);
+  transform: scale(1.15);
 }
 figure {
 	margin: 0;
@@ -63,4 +63,17 @@ figure {
   margin-left: 4%;
   margin: 1% 3%;
   color: rgba(136, 124, 27, 0.7);
+}
+.item-list-object{
+  /* width:33%; */
+}
+.img-item{
+  width: 150px;
+  height: 150px;;
+}
+.trios{
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 200px 200px 200px 200px;
+  justify-content: center;
 }

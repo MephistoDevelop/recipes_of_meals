@@ -9,12 +9,14 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export const App = () => {
 
-  const [categories, setCategories] = useState(false);
-
+  const [categories, setCategories] = useState(0);
+  const [randomMeal, setRandomMeal] = useState({});
+  const categoriesArr = [];
+  const randomMeals = []
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const categoriesArr = [];
+
     axios.get('https://www.themealdb.com/api/json/v1/1/categories.php')
       .then(Response => {
         const objArr = Response.data.categories;
@@ -23,12 +25,26 @@ export const App = () => {
         })
         setCategories(categoriesArr);
       })
+    async function fetch() {
+      for (let i = 0; i < 8; i += 1) {
+        const result = await axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
+          .then(Response => {
+            const obj = Response.data.meals[0];
+            randomMeals.push(obj);
+          })
+
+        if (i === 7) setRandomMeal(randomMeals)
+      }
+    }
+    fetch();
+
   }, []);
+
 
   return (
     <div id="main-container">
       <NavBar categories={categories} />
-      <RandomList />
+      <RandomList randomMeals={randomMeal} />
       <RecipeList categories={categories} />
     </div>
   );

@@ -4,6 +4,7 @@ import { NavBar } from './NavBar';
 import { RandomList } from './RandomList';
 import { RecipeList } from './RecipeList';
 import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import { useDispatch, useSelector } from 'react-redux';
 
 export const App = () => {
@@ -48,9 +49,13 @@ export const App = () => {
 
   return (
     <div id="main-container">
-      <NavBar categories={categories} />
-      <RandomList randomMeals={randomMeal} />
-      <RecipeList categories={categories} />
+      <Router>
+        <NavBar categories={categories} />
+        <Route path="/random" component={() => <RandomList randomMeals={randomMeal} />} />
+        <Route path="/categories" />
+        {/*  */}
+        {/* <RecipeList categories={categories} /> */}
+      </Router>
     </div>
   );
 };

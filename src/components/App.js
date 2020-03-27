@@ -4,8 +4,7 @@ import { NavBar } from './NavBar';
 import { RandomList } from './RandomList';
 import { RecipeList } from './RecipeList';
 import axios from 'axios';
-import { increaseCounter, decreaseCounter } from '../actions/actions';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 
 export const App = () => {
 
@@ -13,7 +12,7 @@ export const App = () => {
   const [randomMeal, setRandomMeal] = useState({});
   const categoriesArr = [];
   const randomMeals = []
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   useEffect(() => {
 
@@ -40,9 +39,9 @@ export const App = () => {
     const divsArr = document.getElementsByClassName('random-item-container');
     for (let i = 0; i < divsArr.length; i += 1) {
       console.log(`Divs Arr: ${divsArr}`);
-      divsArr[i].addEventListener('click', () => {
-        ('Clickeadoooo !!');
-      });
+      // divsArr[i].addEventListener('click', () => {
+      //   alert('Clickeadoooo !!');
+      // });
     };
   }, []);
 

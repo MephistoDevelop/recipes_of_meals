@@ -41,13 +41,13 @@ figure {
 }
 #random-list-container{
   padding:3% 0;
-  border-bottom: 5px solid rgba(155,155,155,0.4);
+  border-bottom: 2px solid rgba(155,155,155,0.4);
 }
 #navbar-container{
   padding: 2% 0;
     align-items: baseline;
     height: 80px;
-    border-bottom: 5px solid rgba(155,155,155,0.4);
+    border-bottom: 2px solid rgba(155,155,155,0.4);
 }
 .random-item-container{
   margin: 0 2%;
@@ -102,7 +102,7 @@ figure {
   color: rgba(136, 124, 27, 0.7);
 }
 
-@media screen and (min-width:750px) and (max-width:1250px) {
+@media screen and (min-width:500px) and (max-width:1250px) {
   .trios{
     margin-top: 10%;;
     display: grid;

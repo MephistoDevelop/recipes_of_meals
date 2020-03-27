@@ -4,6 +4,7 @@ import { RandomList } from './RandomList';
 import { RecipeCategories } from './RecipeCategories';
 import { RecipeDetails } from './RecipeDetails'
 import { RecipesList } from './RecipesList';
+import { Home } from './Home';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import { useDispatch, useSelector } from 'react-redux';
@@ -49,12 +50,14 @@ export const App = () => {
     <div id="main-container">
       <Router>
         <NavBar categories={categories} />
+        <Route path="/home" component={() => <Home />} />
         <Route path="/random" component={() => <RandomList randomMeals={randomMeal} />} />
         <Route path="/details" component={() => <RecipeDetails />} />
         <Route path="/categories" component={() => <RecipeCategories categories={categories} />} />
         <Route path='/meals' component={() => <RecipesList />} />
         {/* <RecipeCategories categories={categories} /> */}
       </Router>
+
     </div>
   );
 };

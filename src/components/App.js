@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavBar } from './NavBar';
 import { RandomList } from './RandomList';
-import { RecipeList } from './RecipeList';
+import { RecipeCategories } from './RecipeCategories';
+import { RecipeDetails } from './RecipeDetails'
+import { RecipesList } from './RecipesList';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import { useDispatch, useSelector } from 'react-redux';
@@ -16,7 +17,6 @@ export const App = () => {
   // const dispatch = useDispatch();
 
   useEffect(() => {
-
     axios.get('https://www.themealdb.com/api/json/v1/1/categories.php')
       .then(Response => {
         const objArr = Response.data.categories;
@@ -25,6 +25,7 @@ export const App = () => {
         })
         setCategories(categoriesArr);
       })
+
     async function fetch() {
       for (let i = 0; i < 8; i += 1) {
         const result = await axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
@@ -40,9 +41,6 @@ export const App = () => {
     const divsArr = document.getElementsByClassName('random-item-container');
     for (let i = 0; i < divsArr.length; i += 1) {
       console.log(`Divs Arr: ${divsArr}`);
-      // divsArr[i].addEventListener('click', () => {
-      //   alert('Clickeadoooo !!');
-      // });
     };
   }, []);
 
@@ -52,9 +50,10 @@ export const App = () => {
       <Router>
         <NavBar categories={categories} />
         <Route path="/random" component={() => <RandomList randomMeals={randomMeal} />} />
-        <Route path="/categories" />
-        {/*  */}
-        {/* <RecipeList categories={categories} /> */}
+        <Route path="/details" component={() => <RecipeDetails />} />
+        <Route path="/categories" component={() => <RecipeCategories categories={categories} />} />
+        <Route path='/meals' component={() => <RecipesList />} />
+        {/* <RecipeCategories categories={categories} /> */}
       </Router>
     </div>
   );

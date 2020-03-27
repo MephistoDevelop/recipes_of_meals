@@ -12,7 +12,7 @@ export const RandomList = ({ randomMeals }) => {
   );
 };
 const eventOnClick = (meal) => {
-  alert('Awebooo prro !!' + meal);
+  alert('Awebooo prro !!' + JSON.stringify(meal));
 };
 const fillRandom = (randomMeal) => {
   const obj = []

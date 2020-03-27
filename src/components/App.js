@@ -37,7 +37,13 @@ export const App = () => {
       }
     }
     fetch();
-
+    const divsArr = document.getElementsByClassName('random-item-container');
+    for (let i = 0; i < divsArr.length; i += 1) {
+      console.log(`Divs Arr: ${divsArr}`);
+      divsArr[i].addEventListener('click', () => {
+        ('Clickeadoooo !!');
+      });
+    };
   }, []);
 
 

@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const RandomList = ({ randomMeals }) => {
-  console.log(`fillRandom => RandomList: ${JSON.stringify(randomMeals)}`)
   return (
     <div id="random-list-container" className="justify-content-center col">
       <div id="random-header">Random Recipes</div>
@@ -21,7 +20,7 @@ const fillRandom = (randomMeal) => {
               <img className="img-thumbnail random-img" src={randomMeal[i].strMealThumb} />
             </figure>
           </div>
-          <div className="title-random-container text">{randomMeal[i].strMeal}</div>
+          <div className="title-random-container">{randomMeal[i].strMeal}</div>
         </div>
       ))
     }

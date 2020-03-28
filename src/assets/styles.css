@@ -100,7 +100,7 @@ figure {
 }
 #home-link{
   color:black;
-  margin-left: 3%;
+  margin-left: 15%;
   border-bottom: 2px solid green;
   text-decoration: none;
   transition: 0.2s ease-in;
@@ -131,22 +131,21 @@ figure {
 #img-home{
   background-image: url("https://www.eatwell101.com/wp-content/uploads/2012/12/healthy-meals-for-the-week.jpg");
   width: 100%;
-  height: 100vh;
-  background-image: url(https://www.eatwell101.com/wp-content/uploads/2012/12/healthy-meals-for-the-week.jpg);
-  width: 100%;
-  height: 100vh;
+  height: 85vh;
+  min-height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 @media screen and (min-width:500px) and (max-width:1250px) {
+  .title-random-container{
+    width: 60px;
+  }
   .trios{
-    margin-top: 10%;;
     display: grid;
     grid-template-columns: 160px 160px 160px;
     grid-template-rows: 160px 160px 160px 160px 160px;
     justify-content: center;
   }
-
   .img-item{
     width: 100px;
     height: 100px;
@@ -155,7 +154,31 @@ figure {
     min-width: 50px;
   }
   .random-img{
-    width: 63px;
-    height: 60px;
+    width: 100px;
+    height: 80px;
   }
+  #title-container{
+    font-size: 16px;;
+    width: 25%;
+
+  }
+  #main-container{
+    width: 100%;
+  }
+  #home-link {
+    font-size: 12px;
+    margin: 0 1.5%;
+  }
+  #categories-link{
+    font-size: 12px;
+    margin: 0 1.3%;
+  }
+  #random-link{
+    font-size: 12px;
+    margin: 0 1.3%;
+  }
+#navbar-container{
+  align-items: center;
+  min-width: 650px;
+}
 }

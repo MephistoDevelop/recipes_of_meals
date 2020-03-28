@@ -13,11 +13,13 @@ This is a application to save and organize recipes filtering by name and types
 - Html,Css,JavaScript
 - ReactJS
 - Redux
-- React Routes
+- React Router
 - React Hooks
 - axios Http request
 - Heroku Deploy
 - API Request
+- Axios Http Requests
+- ReactPlayer npm package
 
 ## Live Demo
 
@@ -38,8 +40,6 @@ To use this repo on your compuer you first need to run this commands:
 ```
 npm install eslint eslint-config-airbnb --save-dev
 
-npx eslint --init
-
  npm install --save react-router-dom
 
 ```
@@ -54,28 +54,6 @@ To Run the Linter files you will need to run this commands on the terminal :
 `npm install eslint eslint-config-airbnb --save-dev`
 `npx eslint --init`
 ```
-
-npx eslint --init, with this configuration:
-
-? How would you like to use ESLint? To check syntax, find problems, and enforce code style
-
-? What type of modules does your project use? JavaScript modules (import/export)
-
-? Which framework does your project use? React
-
-? Does your project use Typescript No
-
-? Where does your code run? Browser
-
-? How would you like to define a style for your project? Use a popular style guide
-
-? Which style guide do you want to follow? Airbnb
-
-? What format do you want your config file to be in? JSON
-
-The config that you've selected requires the following dependencies: ? Would you like to install them now with npm? Yes
-
-after you will need to enter to [Stickler Page](https://stickler-ci.com/) and activate your repository.
 
 **\*\***\*\*\*\***\*\*** Deploy to Heroku with CLI **\*\***\*\*\*\***\*\***
 

@@ -21,7 +21,7 @@ export const RandomList = ({ randomMeals }) => {
   );
 };
 const eventOnClick = (meal, setViewDetails, i) => {
-  alert('Awebooo prro !!' + JSON.stringify(meal));
+  // alert('Awebooo prro !!' + JSON.stringify(meal));
   setViewDetails(true);
   pos = i;
 };

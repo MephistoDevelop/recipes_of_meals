@@ -49,11 +49,13 @@ export const App = () => {
     <div id="main-container">
       <Router>
         <NavBar categories={categories} />
-        <Route path="/home" component={() => <Home />} />
-        <Route path="/random" component={() => <RandomList randomMeals={randomMeal} />} />
-        <Route path="/details" component={() => <RecipeDetails />} />
-        <Route path="/categories" component={() => <RecipeCategories categories={categories} />} />
-        <Route path="/meals" component={() => <RecipesList />} />
+        <div id="content">
+          <Route path="/home" component={() => <Home />} />
+          <Route path="/random" component={() => <RandomList randomMeals={randomMeal} />} />
+          <Route path="/details" component={() => <RecipeDetails />} />
+          <Route path="/categories" component={() => <RecipeCategories categories={categories} />} />
+          <Route path="/meals" component={() => <RecipesList />} />
+        </div>
         {/* <RecipeCategories categories={categories} /> */}
       </Router>
 

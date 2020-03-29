@@ -46,10 +46,14 @@ figure {
   border-bottom: 2px solid rgba(155,155,155,0.4);
 }
 #navbar-container{
+  position: fixed;
   padding: 2% 0;
-    align-items: baseline;
-    height: 80px;
-    border-bottom: 2px solid rgba(155,155,155,0.4);
+  align-items: baseline;
+  height: 80px;
+  width: 80%;
+  background-color: white;
+  border-bottom: 2px solid rgba(155,155,155,0.4);
+  z-index:999;
 }
 .random-item-container{
   margin: 0 2%;
@@ -218,6 +222,9 @@ th{
   justify-content: center;
 }
 
+#content{
+  margin-top: 8%;
+}
 @media screen and (min-width:500px) and (max-width:1250px) {
   .title-random-container{
     width: 60px;
@@ -262,6 +269,5 @@ th{
 #navbar-container{
   align-items: center;
   min-width: 650px;
-  position: fixed;
 }
 }

@@ -23,7 +23,7 @@ This is a application to save and organize recipes filtering by name and types
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://mephistodevelop-recipes.herokuapp.com/)
 [Meal Recipes API](https://www.themealdb.com/api.php)
 
 ## Getting Started

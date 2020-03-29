@@ -20,6 +20,11 @@ width: 120px;
 height: 120px;
 border-radius: 50%;
 }
+.img-list{
+  width: 130px;
+height: auto;
+border-radius: 50%;
+}
 .hover01 figure img {
 	-webkit-transform: scale(1);
 	transform: scale(1);
@@ -136,6 +141,83 @@ figure {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.details-container {
+  padding-bottom: 2%;;
+  margin: 1% 4% !important;;
+  border-bottom: 3px solid green;
+}
+.details-container div img{
+  transition: 0.3s ease;
+}
+.details-container:hover div img{
+  transform: scale(1.15);
+  transition: 0.3s ease;
+}
+.details-container div p{
+  text-align: center;
+  font-size: 16px;
+  line-height: 17px;
+  max-height: 64px;
+  font-weight: 800;
+  padding-top: 10px;
+  color:rgba(103, 94, 21, 0.7);
+}
+#ingredients-container{
+  border-bottom: 2px solid green;;
+  width: 40%;
+  font-family: inherit;
+  font-style: italic;
+}
+
+#image-details-container{
+  width: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-self: center;
+}
+table{
+  width: 100%;
+}
+#img-details{
+  width: 250px;
+height: auto;
+border-radius: 50%;
+}
+#meal-name{
+  text-align: center;
+  font-size: 24px;
+  line-height: 17px;
+  max-height: 64px;
+  font-weight: 800;
+  padding-top: 10px;
+  color: rgba(103, 94, 21, 0.7);
+}
+#meal-category{
+  text-align: center;
+  font-size: 18px;
+  line-height: 17px;
+  max-height: 64px;
+  font-weight: 800;
+  padding-top: 10px;
+  color: rgba(103, 94, 21, 0.7);
+}
+th{
+  height: 10vh;
+}
+#instructions-container{
+  font-size: 1.2rem;
+  margin: 5% 5%;
+  font-family: inherit;
+  font-style: italic;
+  font-weight: 500;
+}
+
+#video-container{
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (min-width:500px) and (max-width:1250px) {
   .title-random-container{
     width: 60px;
@@ -180,5 +262,6 @@ figure {
 #navbar-container{
   align-items: center;
   min-width: 650px;
+  position: fixed;
 }
 }

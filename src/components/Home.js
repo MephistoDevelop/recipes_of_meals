@@ -1,5 +1,3 @@
 import React from 'react';
 
-export const Home = () => {
-  return (<div id="img-home"></div>);
-};
+export const Home = () => (<div id="img-home" />);

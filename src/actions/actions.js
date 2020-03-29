@@ -4,6 +4,6 @@ const increaseCounter = () => ({
 });
 
 const decreaseCounter = () => ({
-  type: 'DECREASE'
+  type: 'DECREASE',
 });
 export { increaseCounter, decreaseCounter };

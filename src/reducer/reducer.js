@@ -1,6 +1,6 @@
 const initialState = {
   counter: 0,
-  recipes: []
+  recipes: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -13,10 +13,13 @@ const reducer = (state = initialState, action) => {
     case 'DECREASE':
       newState.counter -= 1;
       break;
+    case 'SET_MEAL':
+
+      break;
     default:
       return newState;
   }
   return newState;
-}
+};
 
 export default reducer;

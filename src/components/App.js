@@ -48,11 +48,11 @@ export const App = () => {
         <NavBar categories={categories} onClick={() => dispatch(setCategories)} />
         <div id="content">
           <Route path="/home" component={() => <Home />} />
-          <Route path="/random" component={() => <RandomList randomMeals={randomMeal} />} />
+          {/* <Route path="/random" component={() => <RandomList randomMeals={randomMeal} />} />
           <Route path="/details" component={() => <RecipeDetails />} />
           <Route path="/categories" component={() => <RecipeCategories categories={categories} />} />
           <Route path="/meals" component={() => <RecipesList />} />
-          <Route path="/finded" component={() => <FindedMeal />} />
+          <Route path="/finded" component={() => <FindedMeal />} /> */}
         </div>
       </Router>
     </div>

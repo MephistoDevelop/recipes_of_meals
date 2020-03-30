@@ -24,6 +24,7 @@ This is a application to save and organize recipes filtering by name and types
 ## Live Demo
 
 [Live Demo Link](https://meals-recipes.herokuapp.com/home)
+
 [Meal Recipes API](https://www.themealdb.com/api.php)
 
 ## Getting Started

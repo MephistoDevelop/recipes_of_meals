@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
 
@@ -23,7 +24,6 @@ export const RandomList = ({ randomMeals }) => {
 };
 
 const eventOnClick = (meal, setViewDetails, i) => {
-  // alert('Awebooo prro !!' + JSON.stringify(meal));
   setViewDetails(true);
   pos = i;
 };

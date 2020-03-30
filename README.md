@@ -33,6 +33,10 @@ This is a application to save and organize recipes filtering by name and types
 -Before to run this project we need to install npm dependencies with
 ```$> npm install```
 
+node versionused for this project:
+
+"node": "13.12.0"
+
 ### Setup
 
 To use this repo on your compuer you first need to run this commands:

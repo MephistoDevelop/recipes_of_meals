@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
+
 import { Redirect, useHistory } from 'react-router-dom';
 
 export const RecipeCategories = ({ categories }) => {
@@ -42,10 +42,13 @@ export const RecipeCategories = ({ categories }) => {
       <div className="trios ">
         {setItems()}
         {(detailView === true) ? (
-          <Redirect from="*" to={{
-            pathname: "/meals",
-            state: { category: categoryObj }
-          }} />
+          <Redirect
+            from="*"
+            to={{
+              pathname: '/meals',
+              state: { category: categoryObj },
+            }}
+          />
         ) : null}
       </div>
     </div>

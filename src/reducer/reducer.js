@@ -6,8 +6,8 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   const newState = { ...state };
   switch (action.type) {
-    case 'INCREASE':
-      newState.counter += 1;
+    case 'SET_CATEGORIES':
+      newState.categories = { ...state, ok: "good" };
       break;
 
     case 'DECREASE':

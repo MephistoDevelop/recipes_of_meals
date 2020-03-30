@@ -1,15 +1,15 @@
-import { useEffect, useState } from 'react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
 import axios from 'axios';
 import { useLocation, useHistory } from 'react-router-dom';
 
 let mealsArr = [];
-let meal = null;
 let mealSearched = [];
 
-export const RecipesList = (props) => {
+const RecipesList = ({ randomMeals }) => {
   const [rendered, setRendered] = useState(false);
   const [redirect, setRedirect] = useState(false);
+  // console.log(`Im props: ${JSON.stringify(randomMeals)}`)
   const location = useLocation();
   const categoryObj = location.state.category;
   const history = useHistory();
@@ -31,32 +31,32 @@ export const RecipesList = (props) => {
   const onClick = async (mealObj) => {
     await fetchMeal(mealObj);
     // alert(JSON.stringify(mealSearched));
-    console.log(`mealSearched: ${JSON.stringify(mealSearched[0])}`);
     setRedirect(true);
   };
+
   const setMeals = (meals) => {
     const divsArr = [];
+
     if (rendered) {
       for (let i = 0; i < meals.length; i += 1) {
         divsArr.push(
-          <div className="details-container d-flex m-4" name={meals[i].idMeal} onClick={() => onClick(meals[i])}>
+          <div role="button" className="details-container d-flex m-4" name={meals[i].idMeal} onClick={() => onClick(meals[i])}>
             <div>
-              {' '}
-              <img className="img-list" src={meals[i].strMealThumb} />
+              <img alt="meal" className="img-list" src={meals[i].strMealThumb} />
             </div>
             <div className="d-flex align-self-center ml-3">
               <p>{meals[i].strMeal}</p>
             </div>
-          </div>);
+          </div>,
+        );
       }
       return (divsArr);
     }
-
+    return true;
   };
 
   useEffect(() => {
-    const result = fetch(categoryObj.strCategory);
-    // console.log(`IM result from Fetch:: ${JSON.stringify(mealsArr)} `);
+    fetch(categoryObj.strCategory);
   }, []);
 
   return (
@@ -64,8 +64,10 @@ export const RecipesList = (props) => {
       {setMeals(mealsArr)}
       {redirect ? history.replace({
         pathname: './details',
-        state: { meal: mealSearched[0] }
+        state: { meal: mealSearched[0] },
       }) : null}
     </div>
   );
 };
+
+export default RecipesList;

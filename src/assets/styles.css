@@ -146,8 +146,7 @@ figure {
   background-size: cover;
 }
 .details-container {
-  padding-bottom: 2%;;
-  margin: 1% 4% !important;;
+  padding: 3% 3% !important;
   border-bottom: 3px solid green;
 }
 .details-container div img{

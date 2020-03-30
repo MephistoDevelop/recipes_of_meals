@@ -15,7 +15,7 @@ export const RecipeDetails = () => {
           <tr>
             <td>{meal[`strIngredient${i}`]}</td>
             <td>{meal[`strMeasure${i}`]}</td>
-          </tr>
+          </tr>,
         );
       }
       // console.log(`Hey: ${JSON.stringify(meal)}${meal[`strIngredient${i}`]} , ${meal[`strMeasure${i}`]}`);
@@ -36,7 +36,7 @@ export const RecipeDetails = () => {
             {meal.strCategory}
           </div>
         </div>
-        <div id="ingredients-container" >
+        <div id="ingredients-container">
           <div className="d-flex col">
             <table>
               <tr>
@@ -46,8 +46,7 @@ export const RecipeDetails = () => {
               {getIngredients(meal)}
             </table>
           </div>
-          <div>
-          </div>
+          <div />
         </div>
       </div>
       <div id="instructions-container">

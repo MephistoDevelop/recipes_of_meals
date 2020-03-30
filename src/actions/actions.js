@@ -1,9 +1,10 @@
 /* eslint-disable arrow-parens */
-const increaseCounter = () => ({
-  type: 'INCREASE',
+const setCategories = () => ({
+  type: 'SET_CATEGORIES',
 });
 
-const decreaseCounter = () => ({
-  type: 'DECREASE',
+const setRandom = () => ({
+  type: 'SET_RANDOM',
 });
-export { increaseCounter, decreaseCounter };
+
+export { setCategories, setRandom };

@@ -45,7 +45,6 @@ export const CategoryFilter = ({ categories }) => {
 
   return (
     <div id="filter-container">
-      {/* <input type="text" placeholder="Find Recipe" onKeyDown={(e) => handleKeyDown(e)} /> */}
       <input type="text" placeholder="Find Recipe" onChange={(e) => findMeal(e)} />
       {render === true ? <Redirect
         from="*"

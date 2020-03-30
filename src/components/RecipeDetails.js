@@ -5,7 +5,7 @@ import ReactPlayer from 'react-player';
 export const RecipeDetails = () => {
   const location = useLocation();
   const { meal } = location.state;
-  // console.log(`Imlocaion: ${JSON.stringify(location)}`);
+  console.log(`Imlocaion: ${JSON.stringify(location)}`);
 
   const getIngredients = (meal) => {
     const objArr = [];

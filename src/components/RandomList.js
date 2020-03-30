@@ -24,6 +24,7 @@ export const RandomList = ({ randomMeals }) => {
 };
 
 const eventOnClick = (meal, setViewDetails, i) => {
+  no
   setViewDetails(true);
   pos = i;
 };

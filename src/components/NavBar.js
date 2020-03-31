@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { CategoryFilter } from './FilterCategory';
 
 export const NavBar = ({ categories }) => (

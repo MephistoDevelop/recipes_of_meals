@@ -1,25 +1,31 @@
-const initialState = {
-  counter: 0,
-  recipes: [],
+import axios from 'axios'
+
+let initialState = {
+  mealCategories: [],
 };
 
 const reducer = (state = initialState, action) => {
-  const newState = { ...state };
+  let newState = { ...state };
   switch (action.type) {
     case 'SET_CATEGORIES':
-      newState.categories = { ...state, ok: "good" };
-      break;
 
-    case 'DECREASE':
-      newState.counter -= 1;
-      break;
-    case 'SET_MEAL':
+      const response = async () => {
+        const categoriesArr = [];
+        const result = async () => await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php')
+        result().then(Response => {
+          const objArr = Response.data.categories;
+          objArr.forEach((category) => {
+            categoriesArr.push(category);
+          });
+        });
+        newState.mealCategories = categoriesArr;
+      };
+      response();
+      return newState
 
-      break;
     default:
       return newState;
   }
-  return newState;
 };
 
 export default reducer;

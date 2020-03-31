@@ -9,7 +9,6 @@ export const CategoryFilter = ({ categories }) => {
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
-
       const request = async (name) => {
         const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
         objArr = [];
@@ -27,7 +26,6 @@ export const CategoryFilter = ({ categories }) => {
   };
 
   const findMeal = (e) => {
-
     const request = async (name) => {
       const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
       objArr = [];
@@ -41,18 +39,20 @@ export const CategoryFilter = ({ categories }) => {
       setMeals(objArr[0].meals);
       setRender(true);
     }
-  }
+  };
 
   return (
     <div id="filter-container">
       <input type="text" placeholder="Find Recipe" onChange={(e) => findMeal(e)} />
-      {render === true ? <Redirect
-        from="*"
-        to={{
-          pathname: '/finded',
-          state: { meals: meals },
-        }}
-      /> : null}
+      {render === true ? (
+        <Redirect
+          from="*"
+          to={{
+            pathname: '/finded',
+            state: { meals },
+          }}
+        />
+      ) : null}
     </div>
   );
 };

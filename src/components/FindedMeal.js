@@ -4,7 +4,7 @@ import { useLocation, useHistory } from 'react-router-dom';
 
 
 const FindedMeal = () => {
-  let rendered = true;
+  const rendered = true;
   const [redirect, setRedirect] = useState(false);
   const [meal, setMeal] = useState({});
   const location = useLocation();
@@ -54,7 +54,7 @@ const FindedMeal = () => {
       {setMeals(MealsArr)}
       {redirect ? history.replace({
         pathname: './details',
-        state: { meal: meal, hey: "Hello" },
+        state: { meal, hey: 'Hello' },
       }) : null}
     </div>
   );

@@ -2,6 +2,7 @@ import axios from 'axios'
 
 let initialState = {
   mealCategories: [],
+  mealRandom: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -23,6 +24,24 @@ const reducer = (state = initialState, action) => {
       response();
       return newState
 
+    case 'SET_RANDOM':
+
+      const responseRandom = async () => {
+        const randomArr = [];
+        for (let i = 0; i < 8; i += 1) {
+          const result = () => axios.get('https://www.themealdb.com/api/json/v1/1/random.php');
+
+          result().then(Response => {
+            const Obj = Response.data.meals[0];
+            randomArr.push(Obj);
+          });
+        }
+        console.log(`Imreducer random: ${newState.mealRandom}`);
+        newState.mealRandom = randomArr;
+      };
+      responseRandom();
+
+      return newState;
     default:
       return newState;
   }

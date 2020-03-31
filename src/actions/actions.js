@@ -3,8 +3,8 @@ const SetCategories = () => ({
   type: 'SET_CATEGORIES',
 });
 
-const setRandom = () => ({
+const SetRandom = () => ({
   type: 'SET_RANDOM',
 });
 
-export { SetCategories, setRandom };
+export { SetCategories, SetRandom };

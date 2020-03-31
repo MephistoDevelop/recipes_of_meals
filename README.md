@@ -34,9 +34,13 @@ This is a application to save and organize recipes filtering by name and types
 -Before to run this project we need to install npm dependencies with
 ```$> npm install```
 
+PropTypes npm library:
+
+``` npm i -S prop-types ```
+
 node versionused for this project:
 
-"node": "13.12.0"
+``` "node": "13.12.0" ```
 
 ### Setup
 

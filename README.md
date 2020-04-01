@@ -42,6 +42,10 @@ node versionused for this project:
 
 ``` "node": "13.12.0" ```
 
+    React testing library:
+
+  ``` npm install --save-dev @testing-library/react ```
+
 ### Setup
 
 To use this repo on your compuer you first need to run this commands:

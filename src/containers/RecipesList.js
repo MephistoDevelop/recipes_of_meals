@@ -9,7 +9,6 @@ let mealSearched = [];
 const RecipesList = () => {
   const [rendered, setRendered] = useState(false);
   const [redirect, setRedirect] = useState(false);
-  // console.log(`Im props: ${JSON.stringify(randomMeals)}`)
   const location = useLocation();
   const categoryObj = location.state.category;
   const history = useHistory();
@@ -29,7 +28,6 @@ const RecipesList = () => {
 
   const onClick = async (mealObj) => {
     await fetchMeal(mealObj);
-    // alert(JSON.stringify(mealSearched));
     setRedirect(true);
   };
 

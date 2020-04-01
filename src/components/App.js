@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import NavBar from './NavBar';
-import RandomList from './RandomList';
-import RecipeCategories from './RecipeCategories';
-import RecipeDetails from './RecipeDetails';
-import RecipesList from './RecipesList';
+import RandomList from '../containers/RandomList';
+import RecipeCategories from '../containers/RecipeCategories';
+import RecipeDetails from '../containers/RecipeDetails';
+import RecipesList from '../containers/RecipesList';
 import Home from './Home';
-import FindedMeal from './FindedMeal';
+import FindedMeal from '../containers/FindedMeal';
 import { SetCategories, SetRandom } from '../actions/actions';
 
 const App = (props) => {

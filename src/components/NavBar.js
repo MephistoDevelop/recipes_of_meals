@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
-import CategoryFilter from './FilterCategory';
+import CategoryFilter from '../containers/FilterCategory';
 
 const NavBar = ({ categories }) => (
   <div id="navbar-container" className="d-flex">

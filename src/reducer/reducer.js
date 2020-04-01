@@ -1,20 +1,21 @@
-import axios from 'axios'
+/* eslint-disable: no-case-declarations */
+import axios from 'axios';
 
-let initialState = {
+const initialState = {
   mealCategories: [],
   mealRandom: [],
   mealSearch: null,
 };
 
 const reducer = (state = initialState, action) => {
-  let newState = { ...state };
+  const newState = { ...state };
   switch (action.type) {
     case 'SET_CATEGORIES':
-
+    {
       const response = async () => {
         const categoriesArr = [];
-        const result = async () => await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php')
-        result().then(Response => {
+        const result = () => axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
+        result().then((Response) => {
           const objArr = Response.data.categories;
           objArr.forEach((category) => {
             categoriesArr.push(category);
@@ -23,16 +24,15 @@ const reducer = (state = initialState, action) => {
         newState.mealCategories = categoriesArr;
       };
       response();
-      return newState
-
-    case 'SET_RANDOM':
-
+      return newState;
+    }
+    case 'SET_RANDOM': {
       const responseRandom = async () => {
         const randomArr = [];
         for (let i = 0; i < 8; i += 1) {
           const result = () => axios.get('https://www.themealdb.com/api/json/v1/1/random.php');
 
-          result().then(Response => {
+          result().then((Response) => {
             const Obj = Response.data.meals[0];
             randomArr.push(Obj);
           });
@@ -42,23 +42,22 @@ const reducer = (state = initialState, action) => {
       };
       responseRandom();
       return newState;
+    }
 
-    case 'FIND_MEAL':
-
+    case 'FIND_MEAL': {
       const findMeal = async () => {
         const mealArr = [];
-        const name = action.name;
-        const request = async () => await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
+        const { name } = action;
+        const request = () => axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
         request().then((response) => {
           const Obj = response.data.meals;
           mealArr.push(Obj);
         });
         newState.mealSearch = mealArr;
-        // console.log(`newState: ${mealArr}`);
       };
       findMeal();
-      // console.log('Im reducer Find Meal ;D=>  ' + JSON.stringify(newState));
       return newState;
+    }
 
     default:
       return newState;

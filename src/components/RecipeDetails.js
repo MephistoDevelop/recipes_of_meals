@@ -1,11 +1,10 @@
-import React, { useSate } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
-export const RecipeDetails = () => {
+const RecipeDetails = () => {
   const location = useLocation();
   const { meal } = location.state;
-  console.log(`Imlocaion: ${JSON.stringify(location)}`);
 
   const getIngredients = (meal) => {
     const objArr = [];
@@ -18,7 +17,6 @@ export const RecipeDetails = () => {
           </tr>,
         );
       }
-      // console.log(`Hey: ${JSON.stringify(meal)}${meal[`strIngredient${i}`]} , ${meal[`strMeasure${i}`]}`);
     }
     return objArr;
   };
@@ -27,7 +25,7 @@ export const RecipeDetails = () => {
     <div>
       <div id="header-container" className="d-flex justify-content-center mt-5">
         <div id="image-details-container" className="mr-5">
-          <img id="img-details" src={meal.strMealThumb} />
+          <img alt="delicious meal" id="img-details" src={meal.strMealThumb} />
           <div id="meal-name">
             {meal.strMeal}
           </div>
@@ -60,3 +58,5 @@ export const RecipeDetails = () => {
     </div>
   );
 };
+
+export default RecipeDetails;

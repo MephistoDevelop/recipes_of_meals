@@ -1,3 +1,5 @@
 import React from 'react';
 
-export const Home = () => (<div id="img-home" />);
+const Home = () => (<div id="img-home" />);
+
+export default Home;

@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import NavBar from './NavBar';
-import { RandomList } from './RandomList';
-import { RecipeCategories } from './RecipeCategories';
-import { RecipeDetails } from './RecipeDetails';
+import RandomList from './RandomList';
+import RecipeCategories from './RecipeCategories';
+import RecipeDetails from './RecipeDetails';
 import RecipesList from './RecipesList';
-import { Home } from './Home';
+import Home from './Home';
 import FindedMeal from './FindedMeal';
 import { SetCategories, SetRandom } from '../actions/actions';
 
@@ -40,8 +40,8 @@ const App = (props) => {
 App.propTypes = {
   Categories: propTypes.func.isRequired,
   Random: propTypes.func.isRequired,
-  mealCategories: propTypes.array.isRequired,
-  mealRandom: propTypes.array.isRequired,
+  mealCategories: propTypes.instanceOf(Array).isRequired,
+  mealRandom: propTypes.instanceOf(Array).isRequired,
 };
 
 const mapStateToProps = (state) => ({

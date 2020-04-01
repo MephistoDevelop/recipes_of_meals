@@ -9,6 +9,6 @@ const SetRandom = () => ({
 
 const FindMeal = (name) => ({
   type: 'FIND_MEAL',
-  name: name
+  name,
 });
 export { SetCategories, SetRandom, FindMeal };

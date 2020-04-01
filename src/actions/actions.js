@@ -7,4 +7,8 @@ const SetRandom = () => ({
   type: 'SET_RANDOM',
 });
 
-export { SetCategories, SetRandom };
+const FindMeal = (name) => ({
+  type: 'FIND_MEAL',
+  name: name
+});
+export { SetCategories, SetRandom, FindMeal };

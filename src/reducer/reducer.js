@@ -3,6 +3,7 @@ import axios from 'axios'
 let initialState = {
   mealCategories: [],
   mealRandom: [],
+  mealSearch: null,
 };
 
 const reducer = (state = initialState, action) => {
@@ -36,12 +37,29 @@ const reducer = (state = initialState, action) => {
             randomArr.push(Obj);
           });
         }
-        console.log(`Imreducer random: ${newState.mealRandom}`);
+        // console.log(`Imreducer random: ${newState.mealRandom}`);
         newState.mealRandom = randomArr;
       };
       responseRandom();
-
       return newState;
+
+    case 'FIND_MEAL':
+
+      const findMeal = async () => {
+        const mealArr = [];
+        const name = action.name;
+        const request = async () => await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
+        request().then((response) => {
+          const Obj = response.data.meals;
+          mealArr.push(Obj);
+        });
+        newState.mealSearch = mealArr;
+        // console.log(`newState: ${mealArr}`);
+      };
+      findMeal();
+      // console.log('Im reducer Find Meal ;D=>  ' + JSON.stringify(newState));
+      return newState;
+
     default:
       return newState;
   }

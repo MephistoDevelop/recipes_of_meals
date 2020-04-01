@@ -1,58 +1,79 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import propTypes from 'prop-types';
+import { FindMeal } from '../actions/actions';
 
-export const CategoryFilter = ({ categories }) => {
-  let objArr = [];
+let meals = [];
+
+const CategoryFilter = (props) => {
   const [render, setRender] = useState(false);
-  const [meals, setMeals] = useState([]);
+  const { FindMeal, mealSearch } = props;
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      const request = async (name) => {
-        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
-        objArr = [];
-        objArr.push(response.data);
-      };
+  useEffect(() => {
+    FindMeal('');
+  }, []);
 
-      request(e.target.value);
-
-      if (objArr[0] !== undefined) {
-        // console.log('Soy Filter:' + objArr[0].meals);
-        setMeals(objArr[0].meals);
-        setRender(true);
+  const findMeal = (e) => {
+    const nameBox = document.getElementById('txt-name').value;
+    try {
+      if (nameBox.length > 2) {
+        FindMeal(nameBox);
+        mealSearch.forEach((item) => {
+          if (item !== null) {
+            meals = item;
+            setRender(true);
+          }
+        });
+      }
+    } catch (error) {
+      if (e.target.value.length > 2) {
+        FindMeal(e.target.value);
+        mealSearch.forEach((item) => {
+          if (item !== null) {
+            meals = item;
+            setRender(true);
+          }
+        });
       }
     }
   };
 
-  const findMeal = (e) => {
-    const request = async (name) => {
-      const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
-      objArr = [];
-      objArr.push(response.data);
-    };
-
-    request(e.target.value);
-
-    if (objArr[0] !== undefined) {
-      // console.log('Soy Filter:' + objArr[0].meals);
-      setMeals(objArr[0].meals);
-      setRender(true);
-    }
-  };
 
   return (
-    <div id="filter-container">
-      <input type="text" placeholder="Find Recipe" onChange={(e) => findMeal(e)} />
+    <div className="d-flex" id="filter-container">
+      <input id="txt-name" type="text" placeholder="Find Recipe" onChange={(e) => findMeal(e)} />
+      <input type="button" id="btn-search" value="Search" onClick={() => findMeal()} />
       {render === true ? (
         <Redirect
           from="*"
           to={{
             pathname: '/finded',
-            state: { meals },
+            state: { mealSearch: meals },
           }}
         />
-      ) : null}
+      ) : (
+        <Redirect
+          from="*"
+          to={{
+            pathname: '/home',
+          }}
+        />
+      )}
     </div>
   );
 };
+
+const mapStateToProps = (state) => ({
+  mealSearch: state.mealSearch,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  FindMeal: (name) => dispatch(FindMeal(name)),
+});
+
+CategoryFilter.propTypes = ({
+  FindMeal: propTypes.instanceOf(Array).isRequired,
+  mealSearch: propTypes.instanceOf(Array).isRequired,
+});
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryFilter);

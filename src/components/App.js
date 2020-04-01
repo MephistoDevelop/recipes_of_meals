@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
-import { NavBar } from './NavBar';
+import NavBar from './NavBar';
 import { RandomList } from './RandomList';
 import { RecipeCategories } from './RecipeCategories';
 import { RecipeDetails } from './RecipeDetails';

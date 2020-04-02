@@ -53,13 +53,13 @@ const CategoryFilter = (props) => {
           }}
         />
       ) : (
-        <Redirect
-          from="*"
-          to={{
-            pathname: '/home',
-          }}
-        />
-      )}
+          <Redirect
+            from="*"
+            to={{
+              pathname: '/home',
+            }}
+          />
+        )}
     </div>
   );
 };
@@ -73,7 +73,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 CategoryFilter.propTypes = ({
-  FindMeal: propTypes.instanceOf(Array).isRequired,
+  FindMeal: propTypes.func.isRequired,
   mealSearch: propTypes.instanceOf(Array).isRequired,
 });
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryFilter);

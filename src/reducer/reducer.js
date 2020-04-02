@@ -1,10 +1,12 @@
 /* eslint-disable: no-case-declarations */
 import axios from 'axios';
 
-const initialState = {
+export const initialState = {
   mealCategories: [],
   mealRandom: [],
-  mealSearch: null,
+  mealSearch: [],
+  categories: [],
+  FindMeal: []
 };
 
 const reducer = (state = initialState, action) => {

@@ -21,9 +21,9 @@ const App = (props) => {
   }, []);
 
   return (
-    <div id="main-container">
+    <div id="main-container" data-testid="div-home">
       <Router>
-        <NavBar />
+        <NavBar categories={[]} />
         <div id="content">
           <Route path="/home" component={() => <Home />} />
           <Route path="/random" component={() => <RandomList randomMeals={mealRandom} />} />

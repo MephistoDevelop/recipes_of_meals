@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, getByTestId } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { initialState } from '../../reducer/reducer';
 import reducer from '../../reducer/reducer';
@@ -20,9 +20,20 @@ function renderWithRedux(
   }
 }
 
-test('can render with redux with defaults', () => {
-  const { getByTestId, getByText } = renderWithRedux(<App />)
+test('can render with redux with default props', () => {
+  const { getByTestId, getByText } = renderWithRedux(<App />);
   fireEvent.click(getByText('Home'))
-
   expect(getByTestId('div-home')).toBeTruthy();
-})
+});
+
+test('can render menu from random meals', () => {
+  const { getByTestId, getByText } = renderWithRedux(<App />);
+  fireEvent.click(getByText('Random Meals'));
+  expect(getByTestId('random-header')).toHaveTextContent('Random Recipes');
+});
+
+test('can render menu from categories', () => {
+  const { getByTestId, getByText } = renderWithRedux(<App />);
+  fireEvent.click(getByText('Categories'));
+  expect(getByTestId('categories-header')).toHaveTextContent('Categories');
+});

@@ -57,7 +57,7 @@ const RecipesList = () => {
   }, []);
 
   return (
-    <div>
+    <div data-testid="filter-meals">
       {setMeals(mealsArr)}
       {redirect ? history.replace({
         pathname: './details',

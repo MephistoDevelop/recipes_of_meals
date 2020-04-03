@@ -5,7 +5,7 @@ import propTypes from 'prop-types';
 import { FindMeal } from '../actions/actions';
 
 let meals = [];
-
+export const rendered = false;
 const CategoryFilter = (props) => {
   const [render, setRender] = useState(false);
   const { FindMeal, mealSearch } = props;
@@ -32,6 +32,7 @@ const CategoryFilter = (props) => {
         mealSearch.forEach((item) => {
           if (item !== null) {
             meals = item;
+            rendered = true;
             setRender(true);
           }
         });
@@ -42,8 +43,8 @@ const CategoryFilter = (props) => {
 
   return (
     <div className="d-flex" id="filter-container">
-      <input id="txt-name" type="text" placeholder="Find Recipe" onChange={(e) => findMeal(e)} />
-      <input type="button" id="btn-search" value="Search" onClick={() => findMeal()} />
+      <input data-testid="name-mealbox" id="txt-name" type="text" placeholder="Find Recipe" onChange={(e) => findMeal(e)} />
+      <input data-testid="btn-search" type="button" id="btn-search" value="Search" onClick={() => findMeal()} />
       {render === true ? (
         <Redirect
           from="*"
@@ -76,4 +77,5 @@ CategoryFilter.propTypes = ({
   FindMeal: propTypes.func.isRequired,
   mealSearch: propTypes.instanceOf(Array).isRequired,
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryFilter);

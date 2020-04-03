@@ -46,7 +46,7 @@ const RandomList = ({ randomMeals }) => {
 
   return (
     <div id="random-list-container" className="justify-content-center col">
-      <div id="random-header">Random Recipes</div>
+      <div data-testid="random-header" id="random-header">Random Recipes</div>
       <div className="d-flex justify-content-center">{fillRandom(randomMeals, viewDetails, setViewDetails, history)}</div>
     </div>
   );

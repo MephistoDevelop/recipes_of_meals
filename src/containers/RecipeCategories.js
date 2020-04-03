@@ -37,7 +37,7 @@ const RecipeCategories = ({ categories }) => {
 
   return (
     <div id="recipe-list-container col">
-      <div id="recipe-list-header">Categories </div>
+      <div data-testid="categories-header" id="recipe-list-header">Categories </div>
       <div className="trios ">
         {setItems()}
         {(detailView === true) ? (

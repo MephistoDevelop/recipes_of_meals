@@ -2,6 +2,7 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable no-unused-expressions */
+/* eslint disable arrow-parens */
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import {
@@ -14,7 +15,6 @@ import axios from 'axios';
 import axiosMock from 'axios';
 import { Router } from 'react-router-dom';
 import reducer from '../../reducer/reducer';
-import NavBar from '../NavBar';
 import App from '../App';
 
 afterEach(() => {

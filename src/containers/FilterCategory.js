@@ -1,3 +1,4 @@
+/* eslint disable arrow-parens */
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
@@ -53,13 +54,13 @@ const CategoryFilter = (props) => {
           }}
         />
       ) : (
-        <Redirect
-          from="*"
-          to={{
-            pathname: '/home',
-          }}
-        />
-      )}
+          <Redirect
+            from="*"
+            to={{
+              pathname: '/home',
+            }}
+          />
+        )}
     </div>
   );
 };

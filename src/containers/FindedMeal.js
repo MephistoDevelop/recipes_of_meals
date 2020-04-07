@@ -44,7 +44,7 @@ const FindedMeal = () => {
   };
 
   return (
-    <div className="mt-5">
+    <div id="finded-container" className="mt-5">
       {setMeals(MealsArr)}
       {redirect ? history.replace({
         pathname: './details',

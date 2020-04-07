@@ -1,23 +1,21 @@
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect';
+import {
+  render, fireEvent,
+} from '@testing-library/react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { createMemoryHistory } from 'history';
+import axios from 'axios';
+import axiosMock from 'axios';
+import { Router } from 'react-router-dom';
+import reducer from '../../reducer/reducer';
 import NavBar from '../NavBar';
 import App from '../App';
-import { MemoryRouter } from 'react-router-dom'
-import reducer, { initialState } from '../../reducer/reducer';
-import { render, fireEvent, getByTestId, getByText } from '@testing-library/react';
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import { createMemoryHistory } from 'history'
 
-
-function renderWithRedux(
-  { initialState, store = createStore(reducer, initialState) } = {}
-) {
-  return {
-    ...render(<Provider store={store}>{<App />}</Provider>),
-    store,
-  }
-}
+afterEach(() => {
+  axios.get.mockClear();
+});
 
 const customRender = (
   ui,
@@ -27,21 +25,42 @@ const customRender = (
     initialState,
     store = createStore(reducer, initialState),
     ...options
-  } = {}
+  } = {},
 ) => ({
   ...render(
     <Provider store={store}>
-      {ui}
+      <Router history={history}>
+        {ui}
+      </Router>
     </Provider>,
-    options
+    options,
   ),
   history,
 });
 
-test('can render with redux and router', () => {
+
+test('can render random meals with redux and router using axios request on load', () => {
+  axiosMock.get.mockResolvedValueOnce({ data: { categories: [] } });
   const { getByTestId, getByText } = customRender(
-    <App />
+    <App />,
   );
+  expect(axiosMock.get).toHaveBeenCalledTimes(10);
   fireEvent.click(getByText('Random Meals'));
-  expect(getByTestId('random-header')).toBeVisible()
-})
+  expect(getByTestId('random-header')).toBeVisible();
+});
+
+test('can render random meals with redux and router using axios request on load', () => {
+  const data = {
+    data: {
+      categories: [],
+    },
+  };
+  axios.get.mockImplementationOnce(() => Promise.resolve(data));
+  axiosMock.get.mockResolvedValueOnce({ data: { categories: [] } });
+  const { getByTestId, getByText } = customRender(
+    <NavBar categories={data.data.categories} />,
+  );
+  expect(axiosMock.get).toHaveBeenCalledTimes(1);
+  fireEvent.click(getByText('Categories'));
+  expect(getByTestId('categories-header')).toBeTruthy;
+});

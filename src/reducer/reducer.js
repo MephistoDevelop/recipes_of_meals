@@ -6,28 +6,28 @@ export const initialState = {
   mealRandom: [],
   mealSearch: [],
   categories: [],
-  FindMeal: []
+  FindMeal: [],
 };
 
 const reducer = (state = initialState, action) => {
   const newState = { ...state };
   switch (action.type) {
     case 'SET_CATEGORIES':
-      {
-        const response = async () => {
-          const categoriesArr = [];
-          const result = () => axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
-          result().then((Response) => {
-            const objArr = Response.data.categories;
-            objArr.forEach((category) => {
-              categoriesArr.push(category);
-            });
+    {
+      const response = async () => {
+        const categoriesArr = [];
+        const result = () => axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
+        result().then((Response) => {
+          const objArr = Response.data.categories;
+          objArr.forEach((category) => {
+            categoriesArr.push(category);
           });
-          newState.mealCategories = categoriesArr;
-        };
-        response();
-        return newState;
-      }
+        });
+        newState.mealCategories = categoriesArr;
+      };
+      response();
+      return newState;
+    }
     case 'SET_RANDOM': {
       const responseRandom = async () => {
         const randomArr = [];

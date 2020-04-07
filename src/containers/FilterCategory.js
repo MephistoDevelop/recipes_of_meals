@@ -32,7 +32,6 @@ const CategoryFilter = (props) => {
         mealSearch.forEach((item) => {
           if (item !== null) {
             meals = item;
-            rendered = true;
             setRender(true);
           }
         });
@@ -54,13 +53,13 @@ const CategoryFilter = (props) => {
           }}
         />
       ) : (
-          <Redirect
-            from="*"
-            to={{
-              pathname: '/home',
-            }}
-          />
-        )}
+        <Redirect
+          from="*"
+          to={{
+            pathname: '/home',
+          }}
+        />
+      )}
     </div>
   );
 };

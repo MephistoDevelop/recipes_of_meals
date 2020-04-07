@@ -1,35 +1,31 @@
 
 import React from 'react';
-import FilterCategory, { rendered } from '../FilterCategory';
-import { render, fireEvent, getByTestId } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import App from '../../components/App';
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import FilterCategory from '../FilterCategory';
 import reducer from '../../reducer/reducer';
 
 function renderWithRedux(
-  { initialState, store = createStore(reducer, initialState) } = {}
+  { initialState, store = createStore(reducer, initialState) } = {},
 ) {
   return {
-    ...render(<Provider store={store}>{<App />}</Provider>),
-    // adding `store` to the returned utilities to allow us
-    // to reference it in our tests (just try to avoid using
-    // this to test implementation details).
+    ...render(<Provider store={store}><App /></Provider>),
     store,
-  }
+  };
 }
 
 it('can show Home if not found some result', () => {
-  const { getByPlaceholderText, getByText, getByTestId } = renderWithRedux(<FilterCategory />);
+  const { getByPlaceholderText, getByText } = renderWithRedux(<FilterCategory />);
   const nameBox = getByPlaceholderText('Find Recipe');
-  nameBox.value = "";
+  nameBox.value = '';
   fireEvent.click(getByText('Search'));
 });
 
-
 it('can show Home if not found some result', () => {
-  const { getByPlaceholderText, getByText, getByTestId } = renderWithRedux(<FilterCategory />);
+  const { getByPlaceholderText, getByText } = renderWithRedux(<FilterCategory />);
   const nameBox = getByPlaceholderText('Find Recipe');
-  nameBox.value = "beef";
+  nameBox.value = 'beef';
   expect(fireEvent.click(getByText('Search'))).toBe(true);
 });

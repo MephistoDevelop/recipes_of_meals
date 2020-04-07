@@ -2,7 +2,7 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable no-unused-expressions */
-/* eslint disable arrow-parens */
+/* eslint-disable arrow-parens */
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import {

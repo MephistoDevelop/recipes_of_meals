@@ -1,5 +1,6 @@
 /* eslint-disable  import/no-duplicates */
 /* eslint-disable import/no-named-as-default */
+/* eslint-disable arrow-parens */
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';

@@ -13,7 +13,7 @@ const RecipesList = () => {
   const categoryObj = location.state.category;
   const history = useHistory();
 
-  const fetch = category => axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`).then((result) => {
+  const fetch = (category) => axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`).then((result) => {
     mealsArr = [];
     for (let i = 0; i < result.data.meals.length; i += 1) {
       mealsArr.push(result.data.meals[i]);
@@ -21,7 +21,7 @@ const RecipesList = () => {
     setRendered(true);
   });
 
-  const fetchMeal = meal => axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`).then((result) => {
+  const fetchMeal = (meal) => axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`).then((result) => {
     mealSearched = [];
     mealSearched.push(result.data.meals[0]);
   });

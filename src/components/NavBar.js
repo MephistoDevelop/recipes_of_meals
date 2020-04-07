@@ -1,9 +1,4 @@
 import React from 'react';
-
-const Home = () => (<div id="img-home" />);
-
-export default Home;
-import React from 'react';
 import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 import CategoryFilter from '../containers/FilterCategory';

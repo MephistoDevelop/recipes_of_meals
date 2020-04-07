@@ -1,3 +1,5 @@
+/* eslint-disable  import/no-duplicates */
+/* eslint-disable import/no-named-as-default */
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -44,12 +46,12 @@ App.propTypes = {
   mealRandom: propTypes.instanceOf(Array).isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   mealCategories: state.mealCategories,
   mealRandom: state.mealRandom,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   Categories: () => dispatch(SetCategories()),
   Random: () => dispatch(SetRandom()),
 });

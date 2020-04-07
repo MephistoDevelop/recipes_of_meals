@@ -11,7 +11,7 @@ const FindedMeal = () => {
   let mealSearched = [];
   const history = useHistory();
 
-  const fetchMeal = meal => axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`).then((result) => {
+  const fetchMeal = (meal) => axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`).then((result) => {
     mealSearched = [];
     mealSearched.push(result.data.meals[0]);
   });

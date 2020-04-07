@@ -52,19 +52,3 @@ test('can render random meals with redux and router using axios request on load'
   fireEvent.click(getByText('Random Meals'));
   expect(getByTestId('random-header')).toBeVisible();
 });
-
-test('can render random meals with redux and router using axios request on load', () => {
-  const data = {
-    data: {
-      categories: [],
-    },
-  };
-  axios.get.mockImplementationOnce(() => Promise.resolve(data));
-  axiosMock.get.mockResolvedValueOnce({ data: { categories: [] } });
-  const { getByTestId, getByText } = customRender(
-    <NavBar categories={data.data.categories} />,
-  );
-  expect(axiosMock.get).toHaveBeenCalledTimes(1);
-  fireEvent.click(getByText('Categories'));
-  expect(getByTestId('categories-header')).toBeTruthy;
-});

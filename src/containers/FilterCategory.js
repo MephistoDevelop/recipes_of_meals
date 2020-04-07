@@ -1,4 +1,6 @@
 /* eslint-disable arrow-parens */
+/* eslint-disable react/jsx-indent */
+/* eslint-disable indent */
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';

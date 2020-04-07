@@ -46,32 +46,31 @@ this page wants to show a  list of recipes of delicius meals and show it in a fr
 To use this project on your computer you first need to copy or download this repository on your computer .
 after downloading the repository we need to run this commands:
 
--To install npm dependencies with
+To install npm dependencies with
 
-```$> npm install```
+```npm install```
 
 PropTypes npm library:
 
-``` npm i -S prop-types ```
+```npm i -S prop-types ```
 
-    React testing library:
+React testing library:
 
-  ``` npm install --save-dev @testing-library/react ```
+```npm install --save-dev @testing-library/react ```
 
 ```
 npm install eslint eslint-config-airbnb --save-dev
-
- npm install --save react-router-dom
+npm install --save react-router-dom
 
 ```
-
 after you will need to enter to [Stickler Page](https://stickler-ci.com/) and activate your repository.
 
 To Run the Linter files you will need to run this commands on the terminal :
 
 ```
-`npm install eslint eslint-config-airbnb --save-dev`
-`npx eslint --init`
+npm install eslint eslint-config-airbnb --save-dev
+npx eslint --init
+
 ```
 
 if you finish of install all npm dependencies we can run ``` npm test ``` to check that the tests work correctly.

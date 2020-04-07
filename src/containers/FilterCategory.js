@@ -53,13 +53,13 @@ const CategoryFilter = (props) => {
           }}
         />
       ) : (
-        <Redirect
-          from="*"
-          to={{
-            pathname: '/home',
-          }}
-        />
-      )}
+          <Redirect
+            from="*"
+            to={{
+              pathname: '/home',
+            }}
+          />
+        )}
     </div>
   );
 };

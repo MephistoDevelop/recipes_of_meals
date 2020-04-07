@@ -44,12 +44,12 @@ App.propTypes = {
   mealRandom: propTypes.instanceOf(Array).isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   mealCategories: state.mealCategories,
   mealRandom: state.mealRandom,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   Categories: () => dispatch(SetCategories()),
   Random: () => dispatch(SetRandom()),
 });

@@ -64,11 +64,11 @@ const CategoryFilter = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   mealSearch: state.mealSearch,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   FindMeal: (name) => dispatch(FindMeal(name)),
 });
 

@@ -18,6 +18,7 @@ This is a application to save and organize recipes filtering by name and types
 - axios Http request
 - Heroku Deploy
 - API Request
+- Bootstrap CDN
 - Axios Http Requests
 - ReactPlayer npm package
 
@@ -29,26 +30,33 @@ This is a application to save and organize recipes filtering by name and types
 
 ## Getting Started
 
+This aplication is a Web Single Page made with React JS,Redux and heroku using visual studio Code like developer framework.
+
+this page wants to show a  list of recipes of delicius meals and show it in a friendly and nicely User interface
+
 ### Prerequisites
 
--Before to run this project we need to install npm dependencies with
+- npm version  6.14.4
+- Visual Studio Code
+- Ubuntu OS or Linux distribution
+- Heroku account
+
+### Setup
+
+To use this project on your computer you first need to copy or download this repository on your computer .
+after downloading the repository we need to run this commands:
+
+-To install npm dependencies with
+
 ```$> npm install```
 
 PropTypes npm library:
 
 ``` npm i -S prop-types ```
 
-node versionused for this project:
-
-``` "node": "13.12.0" ```
-
     React testing library:
 
   ``` npm install --save-dev @testing-library/react ```
-
-### Setup
-
-To use this repo on your compuer you first need to run this commands:
 
 ```
 npm install eslint eslint-config-airbnb --save-dev
@@ -56,8 +64,6 @@ npm install eslint eslint-config-airbnb --save-dev
  npm install --save react-router-dom
 
 ```
-
-### Deployment
 
 after you will need to enter to [Stickler Page](https://stickler-ci.com/) and activate your repository.
 
@@ -68,10 +74,15 @@ To Run the Linter files you will need to run this commands on the terminal :
 `npx eslint --init`
 ```
 
-**\*\***\*\*\*\***\*\*** Deploy to Heroku with CLI **\*\***\*\*\*\***\*\***
+if you finish of install all npm dependencies we can run ``` npm test ``` to check that the tests work correctly.
+
+if wvwrything goes well, we can run now ``` npm run start ``` to start the live view from the project on http://localhost:3000
+
+### Deployment
+
+Deploy to Heroku with CLI
 
 ```
-
 git add .
 git commit -m "Start with create-react-app"
 git push heroku master
@@ -114,14 +125,3 @@ This project is [MIT](lic.url) licensed.
 
 [Cristian Ines (MephistoDevelop)](https://github.com/MephistoDevelop)
 
-
-All Categories:
-https://www.themealdb.com/api/json/v1/1/categories.php
-
-Search by category:
-
-https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
-
-Random Item:
-
-  https://www.themealdb.com/api/json/v1/1/random.php

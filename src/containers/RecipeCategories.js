@@ -58,4 +58,5 @@ const RecipeCategories = ({ categories }) => {
 RecipeCategories.propTypes = ({
   categories: propTypes.instanceOf(Array).isRequired,
 });
+
 export default RecipeCategories;

@@ -104,6 +104,12 @@ Deploy made with :
 
 https://github.com/mars/create-react-app-buildpack
 
+## Tests
+
+To run the test from React testing library you will need to open the repository folder and run npm command on project terminal and this is the command:
+
+``` $>npm test ```
+
 ## Authors
 
 👤 **Cristian Ines Hernandez A. - MephistoDevelop**

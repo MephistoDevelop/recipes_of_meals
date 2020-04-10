@@ -28,6 +28,12 @@ This is a application to save and organize recipes filtering by name and types
 
 [Meal Recipes API](https://www.themealdb.com/api.php)
 
+## Future features
+
+- Users login
+- Mark on specific recipes
+- Store user recipes from user
+
 ## Getting Started
 
 This aplication is a Web Single Page made with React JS,Redux and heroku using visual studio Code like developer framework.

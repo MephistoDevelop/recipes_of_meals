@@ -1,6 +1,6 @@
 # Meal Recipes
 
-> Project taked from Microverse React Capstone Project
+> Project taken from Microverse React Capstone Project
 
 ### Screenshot
 
@@ -81,7 +81,7 @@ npx eslint --init
 
 if you finish of install all npm dependencies we can run ``` npm test ``` to check that the tests work correctly.
 
-if wvwrything goes well, we can run now ``` npm run start ``` to start the live view from the project on http://localhost:3000
+if everything goes well, we can run now ``` npm run start ``` to start the live view from the project on http://localhost:3000
 
 ### Deployment
 

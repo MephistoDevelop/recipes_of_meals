@@ -23,6 +23,11 @@ test('can render with redux with default props', () => {
   expect(getByTestId('div-home')).toBeTruthy();
 });
 
+test('cant render with redux with default props', () => {
+  const { getByTestId, getByText } = renderWithRedux(<App />);
+  fireEvent.click(getByText('Random Meals'));
+  expect(getByTestId('div-home')).toBeTruthy();
+});
 test('can render menu from random meals', () => {
   const { getByTestId, getByText } = renderWithRedux(<App />);
   fireEvent.click(getByText('Random Meals'));

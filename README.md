@@ -98,7 +98,24 @@ Deploy made with :
 
 https://github.com/mars/create-react-app-buildpack
 
-## Authors
+## Test
+
+On this project we are going to use [React Testing Library](https://testing-library.com/docs/react-testing-library/setup) to run the tests.
+
+React Testing Library does not require any configuration to be used (React Testing Library does not require that you use Jest).
+
+Global Config
+
+Adding options to your global test config can simplify the setup and teardown of tests in individual files.
+
+to install this library test we need to run this command on terminal folder
+````npm install --save-dev @testing-library/dom````
+
+To run the test created we only need to run this command:
+
+``` npm test ```
+
+## Author
 
 👤 **Cristian Ines Hernandez A. - MephistoDevelop**
 
@@ -119,8 +136,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](lic.url) licensed.
-
-### Author:
-
-[Cristian Ines (MephistoDevelop)](https://github.com/MephistoDevelop)
-

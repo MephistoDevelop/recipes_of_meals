@@ -1,8 +1,7 @@
 /* eslint-disable arrow-parens */
 import React, { useEffect, useState } from 'react';
-
 import axios from 'axios';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation, Redirect } from 'react-router-dom';
 
 let mealsArr = [];
 let mealSearched = [];
@@ -12,7 +11,6 @@ const RecipesList = () => {
   const [redirect, setRedirect] = useState(false);
   const location = useLocation();
   const categoryObj = location.state.category;
-  const history = useHistory();
 
   const fetch = (category) => axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`).then((result) => {
     mealsArr = [];
@@ -38,7 +36,7 @@ const RecipesList = () => {
     if (rendered) {
       for (let i = 0; i < meals.length; i += 1) {
         divsArr.push(
-          <div role="button" tabIndex={0} onKeyPress={null} className="details-container d-flex m-4" name={meals[i].idMeal} onClick={() => onClick(meals[i])}>
+          <div key={i} role="button" tabIndex={0} onKeyPress={null} className="details-container d-flex m-4" name={meals[i].idMeal} onClick={() => onClick(meals[i])}>
             <div>
               <img alt="meal" className="img-list" src={meals[i].strMealThumb} />
             </div>
@@ -60,10 +58,7 @@ const RecipesList = () => {
   return (
     <div data-testid="filter-meals">
       {setMeals(mealsArr)}
-      {redirect ? history.replace({
-        pathname: './details',
-        state: { meal: mealSearched[0] },
-      }) : null}
+      {redirect ? <Redirect to={{ pathname: '/details', search: `${mealSearched[0].idMeal}`, state: { meal: mealSearched[0] } }} /> : null}
     </div>
   );
 };

@@ -1,25 +1,18 @@
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 let pos = 0;
 
 const RandomList = ({ randomMeals }) => {
   const [viewDetails, setViewDetails] = useState(false);
-  const history = useHistory();
-
-  if (history.location && history.location.state && history.location.state.from) {
-    const state = { ...history.location.state };
-    delete state.from;
-    history.replace({ ...history.location, state });
-  }
 
   const eventOnClick = (meal, setViewDetails, i) => {
     setViewDetails(true);
     pos = i;
   };
 
-  const fillRandom = (randomMeal, viewDetails, setViewDetails, history) => {
+  const fillRandom = (randomMeal, viewDetails, setViewDetails) => {
     const obj = [];
 
     if (randomMeal.length >= 7) {
@@ -32,10 +25,7 @@ const RandomList = ({ randomMeals }) => {
               </figure>
             </div>
             <div className="title-random-container">{randomMeal[i].strMeal}</div>
-            {viewDetails === true ? history.replace({
-              pathname: '/details',
-              state: { meal: randomMeal[pos] },
-            }) : null}
+            {viewDetails ? <Redirect to={{ pathname: '/details', search: `${randomMeal[i].idMeal}`, state: { meal: randomMeal[pos] } }} /> : null}
           </div>
         ));
       }
@@ -47,7 +37,7 @@ const RandomList = ({ randomMeals }) => {
   return (
     <div id="random-list-container" className="justify-content-center col">
       <div data-testid="random-header" id="random-header">Random Recipes</div>
-      <div className="d-flex justify-content-center">{fillRandom(randomMeals, viewDetails, setViewDetails, history)}</div>
+      <div className="d-flex justify-content-center">{fillRandom(randomMeals, viewDetails, setViewDetails)}</div>
     </div>
   );
 };

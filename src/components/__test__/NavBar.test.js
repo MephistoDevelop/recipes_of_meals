@@ -1,8 +1,5 @@
-/* eslint-disable  import/no-duplicates */
-/* eslint-disable import/no-named-as-default */
-/* eslint-disable import/no-named-as-default-member */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable arrow-parens */
+/* eslint-disable import/no-duplicates */
+/* eslint-disable import/extensions */
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import {

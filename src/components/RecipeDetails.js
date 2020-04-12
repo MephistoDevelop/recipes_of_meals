@@ -1,11 +1,12 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import ReactPlayer from 'react-player';
+
 const RecipeDetails = () => {
   const location = useLocation();
   const { meal } = location.state || { meal: [] };
 
-  const getIngredients = (meal) => {
+  const getIngredients = meal => {
     const objArr = [];
     for (let i = 1; i < 19; i += 1) {
       if (meal[`strIngredient${i}`] !== '') {

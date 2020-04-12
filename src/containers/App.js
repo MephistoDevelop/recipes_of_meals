@@ -5,13 +5,13 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
-import NavBar from './NavBar';
-import RandomList from '../containers/RandomList';
-import RecipeCategories from '../containers/RecipeCategories';
-import RecipeDetails from '../containers/RecipeDetails';
-import RecipesList from '../containers/RecipesList';
-import Home from './Home';
-import FindedMeal from '../containers/FindedMeal';
+import NavBar from '../components/NavBar';
+import RandomList from '../components/RandomList';
+import RecipeCategories from '../components/RecipeCategories';
+import RecipeDetails from '../components/RecipeDetails';
+import RecipesList from '../components/RecipesList';
+import Home from '../components/Home';
+import FindedMeal from '../components/FindedMeal';
 import { SetCategories, SetRandom } from '../actions/actions';
 
 const App = (props) => {

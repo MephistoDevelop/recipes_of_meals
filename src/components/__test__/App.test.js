@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -5,7 +6,7 @@ import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import reducer from '../../reducer/reducer';
 
-import App from '../App';
+import App from '../App.js';
 
 function renderWithRedux(
   ui,

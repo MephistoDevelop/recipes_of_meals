@@ -14,7 +14,7 @@ const RecipeCategories = ({ categories }) => {
     history.replace({ ...history.location, state });
   }
 
-  const showDetails = (category) => {
+  const showDetails = category => {
     setDetailView(true);
     setCatgoryObj(category);
   };

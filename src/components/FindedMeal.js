@@ -1,7 +1,6 @@
-/* eslint-disable arrow-parens */
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation, Redirect } from 'react-router-dom';
 
 const FindedMeal = () => {
   const rendered = true;
@@ -10,26 +9,25 @@ const FindedMeal = () => {
   const location = useLocation();
   const MealsArr = location.state.mealSearch;
   let mealSearched = [];
-  const history = useHistory();
 
-  const fetchMeal = (meal) => axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`).then((result) => {
+  const fetchMeal = meal => axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`).then(result => {
     mealSearched = [];
     mealSearched.push(result.data.meals[0]);
   });
 
-  const onClickListener = async (mealObj) => {
+  const onClickListener = async mealObj => {
     await fetchMeal(mealObj);
     setMeal(mealSearched[0]);
     setRedirect(true);
   };
 
-  const setMeals = (meals) => {
+  const setMeals = meals => {
     const divsArr = [];
 
     if (rendered && meals) {
       for (let i = 0; i < meals.length; i += 1) {
         divsArr.push(
-          <div role="button" tabIndex={0} className="details-container d-flex m-4" name={meals[i].idMeal} onKeyPress={null} onClick={() => onClickListener(meals[i])}>
+          <div key={i} role="button" tabIndex={0} className="details-container d-flex m-4" name={meals[i].idMeal} onKeyPress={null} onClick={() => onClickListener(meals[i])}>
             <div>
               <img alt="meal" className="img-list" src={meals[i].strMealThumb} />
             </div>
@@ -47,10 +45,7 @@ const FindedMeal = () => {
   return (
     <div id="finded-container" className="mt-5">
       {setMeals(MealsArr)}
-      {redirect ? history.replace({
-        pathname: './details',
-        state: { meal },
-      }) : null}
+      {redirect ? <Redirect to={{ pathname: '/details', search: `${meal.idMeal}`, state: { meal } }} /> : null}
     </div>
   );
 };

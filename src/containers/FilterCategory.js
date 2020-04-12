@@ -47,7 +47,7 @@ const CategoryFilter = (props) => {
     <div className="d-flex" id="filter-container">
       <input data-testid="name-mealbox" id="txt-name" type="text" placeholder="Find Recipe" onChange={(e) => findMeal(e)} />
       <input data-testid="btn-search" type="button" id="btn-search" value="Search" onClick={() => findMeal()} />
-      {render === true ? (
+      {render ? (
         <Redirect
           from="*"
           to={{

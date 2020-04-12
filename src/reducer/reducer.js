@@ -17,9 +17,9 @@ const reducer = (state = initialState, action) => {
       const response = async () => {
         const categoriesArr = [];
         const result = () => axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
-        result().then((Response) => {
+        result().then(Response => {
           const objArr = Response.data.categories;
-          objArr.forEach((category) => {
+          objArr.forEach(category => {
             categoriesArr.push(category);
           });
         });
@@ -34,7 +34,7 @@ const reducer = (state = initialState, action) => {
         for (let i = 0; i < 8; i += 1) {
           const result = () => axios.get('https://www.themealdb.com/api/json/v1/1/random.php');
 
-          result().then((Response) => {
+          result().then(Response => {
             const Obj = Response.data.meals[0];
             randomArr.push(Obj);
           });
@@ -50,7 +50,7 @@ const reducer = (state = initialState, action) => {
         const mealArr = [];
         const { name } = action;
         const request = () => axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
-        request().then((response) => {
+        request().then(response => {
           const Obj = response.data.meals;
           mealArr.push(Obj);
         });

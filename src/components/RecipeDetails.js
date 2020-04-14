@@ -63,11 +63,11 @@ const RecipeDetails = () => {
         {meal.strInstructions}
       </div>
       <div id="video-container" className="mt-5">
-        {/* {console.log(`Link Youtube ${url} ==>${meal.strYoutube.slice(32, meal.strYoutube.length)} ==> ${'http://' + meal.strYoutube.slice(8, meal.strYoutube.length)}`)} */}
+        {console.log(`Link Youtube ${meal.strYoutube.replace("watch?v=", "embed/")} ${url} ==>${meal.strYoutube.slice(32, meal.strYoutube.length)} ==> ${'http://' + meal.strYoutube.slice(8, meal.strYoutube.length)}`)}
         {/* <ReactPlayer url={url} /> */}
         {/* <YouTube videoId={meal.strYoutube.slice(32, meal.strYoutube.length)} opts={opts} /> */}
         <iframe id="player" type="text/html" width="640" height="390"
-          src={meal.strYoutube + "?enablejsapi=1&origin=https://example.com"}
+          src={meal.strYoutube.replace("watch?v=", "embed/") + '?enablejsapi=1&origin=http://example.com'}
           frameBorder="0"></iframe>
       </div>
     </div >

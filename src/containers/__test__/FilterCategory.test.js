@@ -3,7 +3,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import App from '../../components/App';
+import App from '../App';
 import FilterCategory from '../FilterCategory';
 import reducer from '../../reducer/reducer';
 

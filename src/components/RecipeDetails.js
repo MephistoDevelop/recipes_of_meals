@@ -20,6 +20,8 @@ const RecipeDetails = () => {
     }
     return objArr;
   };
+  // const url = `http://${meal.strYoutube.slice(8, meal.strYoutube.length) + '?showinfo=0&enablejsapi=1&origin=http://localhost:3000'}`
+  const url = `${meal.strYoutube + '?showinfo=0&enablejsapi=1&origin=https://github.com/MephistoDevelop/recipes_of_meals'}`
 
   return (
     <div>
@@ -55,10 +57,13 @@ const RecipeDetails = () => {
         {meal.strInstructions}
       </div>
       <div id="video-container" className="mt-5">
-        <ReactPlayer url={meal.strYoutube} />
+        {console.log(`Link Youtube ${url} ==>${meal.strYoutube.slice(32, meal.strYoutube.length)} ==> ${'http://' + meal.strYoutube.slice(8, meal.strYoutube.length)}`)}
+        <ReactPlayer url={url} />
+
       </div>
     </div>
   );
 };
+
 
 export default RecipeDetails;

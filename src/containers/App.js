@@ -1,6 +1,4 @@
-/* eslint-disable  import/no-duplicates */
-/* eslint-disable import/no-named-as-default */
-/* eslint-disable arrow-parens */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -14,7 +12,7 @@ import Home from '../components/Home';
 import FindedMeal from '../components/FindedMeal';
 import { SetCategories, SetRandom } from '../actions/actions';
 
-const App = (props) => {
+const App = props => {
   const { Categories, Random } = props;
   const { mealCategories, mealRandom } = props;
 
@@ -47,12 +45,12 @@ App.propTypes = {
   mealRandom: propTypes.instanceOf(Array).isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   mealCategories: state.mealCategories,
   mealRandom: state.mealRandom,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   Categories: () => dispatch(SetCategories()),
   Random: () => dispatch(SetRandom()),
 });

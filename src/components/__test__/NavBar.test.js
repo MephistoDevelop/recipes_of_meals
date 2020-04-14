@@ -12,7 +12,7 @@ import axios from 'axios';
 import axiosMock from 'axios';
 import { Router } from 'react-router-dom';
 import reducer from '../../reducer/reducer';
-import App from '../App';
+import App from '../../containers/App';
 
 afterEach(() => {
   axios.get.mockClear();

@@ -1,12 +1,12 @@
 /* eslint-disable import/extensions */
 import React from 'react';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render, fireEvent } from '@testing-library/react';
+import { createStore } from 'redux';
 import '@testing-library/jest-dom/extend-expect';
 import reducer from '../../reducer/reducer';
 
-import App from '../App.js';
+import App from '../../containers/App';
 
 function renderWithRedux(
   ui,
@@ -18,10 +18,16 @@ function renderWithRedux(
   };
 }
 
-test('can render with redux with default props', () => {
+test('can render Home page with redux and default props', () => {
   const { getByTestId, getByText } = renderWithRedux(<App />);
   fireEvent.click(getByText('Home'));
   expect(getByTestId('div-home')).toBeTruthy();
+});
+
+test('Cant render home page ', () => {
+  const { getByTestId, getByText } = renderWithRedux(<App />);
+  fireEvent.click(getByText('Random Meals'));
+  expect(getByTestId('random-header')).toBeTruthy();
 });
 
 test('cant render with redux with default props', () => {

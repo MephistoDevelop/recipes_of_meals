@@ -1,4 +1,4 @@
-/* eslint-disable arrow-parens */
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-indent */
 /* eslint-disable indent */
 import React, { useState, useEffect } from 'react';
@@ -9,7 +9,7 @@ import { FindMeal } from '../actions/actions';
 
 let meals = [];
 export const rendered = false;
-const CategoryFilter = (props) => {
+const CategoryFilter = props => {
   const [render, setRender] = useState(false);
   const { FindMeal, mealSearch } = props;
 
@@ -17,12 +17,12 @@ const CategoryFilter = (props) => {
     FindMeal('');
   }, []);
 
-  const findMeal = (e) => {
+  const findMeal = e => {
     const nameBox = document.getElementById('txt-name').value;
     try {
       if (nameBox.length > 2) {
         FindMeal(nameBox);
-        mealSearch.forEach((item) => {
+        mealSearch.forEach(item => {
           if (item !== null) {
             meals = item;
             setRender(true);
@@ -32,7 +32,7 @@ const CategoryFilter = (props) => {
     } catch (error) {
       if (e.target.value.length > 2) {
         FindMeal(e.target.value);
-        mealSearch.forEach((item) => {
+        mealSearch.forEach(item => {
           if (item !== null) {
             meals = item;
             setRender(true);
@@ -45,7 +45,7 @@ const CategoryFilter = (props) => {
 
   return (
     <div className="d-flex" id="filter-container">
-      <input data-testid="name-mealbox" id="txt-name" type="text" placeholder="Find Recipe" onChange={(e) => findMeal(e)} />
+      <input data-testid="name-mealbox" id="txt-name" type="text" placeholder="Find Recipe" onChange={e => findMeal(e)} />
       <input data-testid="btn-search" type="button" id="btn-search" value="Search" onClick={() => findMeal()} />
       {render ? (
         <Redirect
@@ -67,12 +67,12 @@ const CategoryFilter = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   mealSearch: state.mealSearch,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  FindMeal: (name) => dispatch(FindMeal(name)),
+const mapDispatchToProps = dispatch => ({
+  FindMeal: name => dispatch(FindMeal(name)),
 });
 
 CategoryFilter.propTypes = ({

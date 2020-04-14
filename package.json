@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@brightcove/react-player-loader": "^1.4.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
@@ -11,6 +12,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-native-webview": "^9.1.4",
+    "react-native-youtube-iframe": "^1.2.2",
     "react-player": "^1.15.3",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",

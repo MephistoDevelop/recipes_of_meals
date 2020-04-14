@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import ReactPlayer from 'react-player';
+import YouTube from 'react-youtube';
 
 const RecipeDetails = () => {
   const location = useLocation();
@@ -21,7 +22,12 @@ const RecipeDetails = () => {
     return objArr;
   };
   // const url = `http://${meal.strYoutube.slice(8, meal.strYoutube.length) + '?showinfo=0&enablejsapi=1&origin=http://localhost:3000'}`
-  const url = `${meal.strYoutube + '?showinfo=0&enablejsapi=1&origin=https://meals-recipes.herokuapp.com'}`
+  const url = `${meal.strYoutube + '?showinfo=0&enablejsapi=1&origin=https://meals-recipes.herokuapp.com'}`;
+
+  const opts = {
+    height: '390',
+    width: '640',
+  }
 
   return (
     <div>
@@ -57,11 +63,11 @@ const RecipeDetails = () => {
         {meal.strInstructions}
       </div>
       <div id="video-container" className="mt-5">
-        {console.log(`Link Youtube ${url} ==>${meal.strYoutube.slice(32, meal.strYoutube.length)} ==> ${'http://' + meal.strYoutube.slice(8, meal.strYoutube.length)}`)}
-        <ReactPlayer url={url} />
-
+        {/* {console.log(`Link Youtube ${url} ==>${meal.strYoutube.slice(32, meal.strYoutube.length)} ==> ${'http://' + meal.strYoutube.slice(8, meal.strYoutube.length)}`)} */}
+        {/* <ReactPlayer url={url} /> */}
+        <YouTube videoId={meal.strYoutube.slice(32, meal.strYoutube.length)} opts={opts} />
       </div>
-    </div>
+    </div >
   );
 };
 

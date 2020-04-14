@@ -21,7 +21,7 @@ const RecipeDetails = () => {
     return objArr;
   };
   // const url = `http://${meal.strYoutube.slice(8, meal.strYoutube.length) + '?showinfo=0&enablejsapi=1&origin=http://localhost:3000'}`
-  const url = `${meal.strYoutube + '?showinfo=0&enablejsapi=1&origin=https://github.com/MephistoDevelop/recipes_of_meals'}`
+  const url = `${meal.strYoutube + '?showinfo=0&enablejsapi=1&origin=https://meals-recipes.herokuapp.com'}`
 
   return (
     <div>

@@ -5,7 +5,7 @@ import { render, fireEvent, cleanup } from '@testing-library/react';
 import { createStore } from 'redux';
 import '@testing-library/jest-dom/extend-expect';
 import reducer from '../../reducer/reducer';
-import App from '../../containers/App';
+import App from '../App';
 
 
 function renderWithRedux(

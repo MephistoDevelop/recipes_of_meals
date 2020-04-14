@@ -28,7 +28,7 @@ const App = props => {
         <div id="content">
           <Route path="/home" component={() => <Home />} />
           <Route path="/random" component={() => <RandomList randomMeals={mealRandom} />} />
-          <Route path="/details" component={() => <RecipeDetails />} />
+          <Route path="/details/:id" component={() => <RecipeDetails />} />
           <Route path="/categories" component={() => <RecipeCategories categories={mealCategories} />} />
           <Route path="/meals" component={() => <RecipesList />} />
           <Route path="/finded" component={() => <FindedMeal />} />

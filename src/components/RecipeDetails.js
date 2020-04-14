@@ -22,7 +22,7 @@ const RecipeDetails = () => {
     return objArr;
   };
   // const url = `http://${meal.strYoutube.slice(8, meal.strYoutube.length) + '?showinfo=0&enablejsapi=1&origin=http://localhost:3000'}`
-  const url = `${meal.strYoutube + '?showinfo=0&enablejsapi=1&origin=https://meals-recipes.herokuapp.com'}`;
+  const url = `${meal.strYoutube}`;
 
   const opts = {
     height: '390',
@@ -65,7 +65,10 @@ const RecipeDetails = () => {
       <div id="video-container" className="mt-5">
         {/* {console.log(`Link Youtube ${url} ==>${meal.strYoutube.slice(32, meal.strYoutube.length)} ==> ${'http://' + meal.strYoutube.slice(8, meal.strYoutube.length)}`)} */}
         {/* <ReactPlayer url={url} /> */}
-        <YouTube videoId={meal.strYoutube.slice(32, meal.strYoutube.length)} opts={opts} />
+        {/* <YouTube videoId={meal.strYoutube.slice(32, meal.strYoutube.length)} opts={opts} /> */}
+        <iframe id="player" type="text/html" width="640" height="390"
+          src={meal.strYoutube + "?enablejsapi=1&origin=https://example.com"}
+          frameBorder="0"></iframe>
       </div>
     </div >
   );

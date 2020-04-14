@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import React from 'react';
-import { render, fireEvent, getByTestId } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from '../App';
@@ -24,7 +24,7 @@ it('can show Home if not found some result', () => {
 });
 
 it('can not show menu if not input some search', () => {
-  const { getByPlaceholderText, getByText, getByTestId } = renderWithRedux(<FilterCategory />);
+  const { getByText, getByTestId } = renderWithRedux(<FilterCategory />);
   fireEvent.click(getByText('Search'));
   expect(getByTestId('home-image')).toBeTruthy();
 });

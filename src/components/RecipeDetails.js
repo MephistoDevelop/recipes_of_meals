@@ -54,11 +54,17 @@ const RecipeDetails = () => {
         {meal.strInstructions}
       </div>
       <div id="video-container" className="mt-5">
-        <iframe title="video-meal" id="player" type="text/html" width="640" height="390"
-          src={meal.strYoutube.replace("watch?v=", "embed/") + '?enablejsapi=1&origin=http://example.com'}
-          frameBorder="0"></iframe>
+        <iframe
+          title="video-meal"
+          id="player"
+          type="text/html"
+          width="640"
+          height="390"
+          src={`${meal.strYoutube.replace('watch?v=', 'embed/')}?enablejsapi=1&origin=http://example.com`}
+          frameBorder="0"
+        />
       </div>
-    </div >
+    </div>
   );
 };
 

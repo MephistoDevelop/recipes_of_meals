@@ -1,12 +1,12 @@
 /* eslint-disable import/extensions */
 import React from 'react';
 import { Provider } from 'react-redux';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, cleanup } from '@testing-library/react';
 import { createStore } from 'redux';
 import '@testing-library/jest-dom/extend-expect';
 import reducer from '../../reducer/reducer';
-
 import App from '../../containers/App';
+
 
 function renderWithRedux(
   ui,
@@ -17,6 +17,7 @@ function renderWithRedux(
     store,
   };
 }
+afterEach(cleanup);
 
 test('can render Home page with redux and default props', () => {
   const { getByTestId, getByText } = renderWithRedux(<App />);
@@ -24,25 +25,32 @@ test('can render Home page with redux and default props', () => {
   expect(getByTestId('div-home')).toBeTruthy();
 });
 
-test('Cant render home page ', () => {
+test('Can not render home page ', () => {
   const { getByTestId, getByText } = renderWithRedux(<App />);
   fireEvent.click(getByText('Random Meals'));
   expect(getByTestId('random-header')).toBeTruthy();
 });
 
-test('cant render with redux with default props', () => {
-  const { getByTestId, getByText } = renderWithRedux(<App />);
-  fireEvent.click(getByText('Random Meals'));
-  expect(getByTestId('div-home')).toBeTruthy();
-});
 test('can render menu from random meals', () => {
   const { getByTestId, getByText } = renderWithRedux(<App />);
   fireEvent.click(getByText('Random Meals'));
   expect(getByTestId('random-header')).toHaveTextContent('Random Recipes');
 });
 
+test('can not  render menu from random meals', () => {
+  const { getByTestId, getByText } = renderWithRedux(<App />);
+  fireEvent.click(getByText('Home'));
+  expect(getByTestId('home-image')).toBeTruthy();
+});
+
 test('can render menu from categories', () => {
   const { getByTestId, getByText } = renderWithRedux(<App />);
   fireEvent.click(getByText('Categories'));
   expect(getByTestId('categories-header')).toHaveTextContent('Categories');
+});
+
+test('can not render menu from categories', () => {
+  const { getByTestId, getByText } = renderWithRedux(<App />);
+  fireEvent.click(getByText('Home'));
+  expect(getByTestId('home-image').textContent).toBe('');
 });

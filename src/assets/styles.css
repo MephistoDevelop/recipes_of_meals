@@ -1,0 +1,278 @@
+#root{
+  display: flex;
+  justify-content: center;
+  background: rgba(155,155,155,0.3);;
+}
+#title-container {
+  text-align: center;
+  font-size: 24px;
+  font-family: monospace;
+  font-weight: 900;
+  color: rgba(136, 124, 27, 0.7);
+  width: 30%;
+}
+#main-container{
+  width: 80%;
+  background-color: white;
+}
+.random-img{
+width: 120px;
+height: 120px;
+border-radius: 50%;
+}
+.img-list{
+  width: 130px;
+height: auto;
+border-radius: 50%;
+}
+.hover01 figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+.hover01 figure:hover img {
+	-webkit-transform: scale(1.38);
+  transform: scale(1.25);
+}
+figure {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+}
+#random-list-container{
+  padding:3% 0;
+  border-bottom: 2px solid rgba(155,155,155,0.4);
+}
+#navbar-container{
+  position: fixed;
+  padding: 2% 0;
+  align-items: baseline;
+  height: 80px;
+  width: 80%;
+  background-color: white;
+  border-bottom: 2px solid rgba(155,155,155,0.4);
+  z-index:999;
+}
+.random-item-container{
+  margin: 0 2%;
+  min-width: 110px;
+}
+.title-random-container{
+  text-align: center;
+  font-size: 12px;
+  line-height: 17px;
+  max-height: 64px;
+  font-weight: 800;
+  padding-top: 10px;
+  color: rgba(136, 124, 27, 0.7);
+}
+#btn-search{
+  background-color: rgba(136, 124, 27, 0.7);
+  color: white;
+  font-weight: 500;
+  border: none;
+}
+#random-header{
+  font-size: 21px;
+  font-family: monospace;
+  font-weight: 900;
+  margin-left: 4%;
+  margin: 1% 3%;
+  color: rgba(136, 124, 27, 0.7);
+}
+.item-list-object{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.img-item{
+  width: 150px;
+  height: 150px;;
+}
+#recipe-list-header{
+  font-size: 28px;
+  font-family: monospace;
+  font-weight: 900;
+  margin-left: 8%;
+  margin: 1% 6%;
+  color: rgba(136, 124, 27, 0.7);
+}
+.trios{
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 220px 220px 220px 220px 220px;
+  justify-content: center;
+}
+.text{
+  font-size: 18px;
+  line-height: 17px;
+  max-height: 64px;
+  font-weight: 800;
+  padding-top: 10px;
+  color: rgba(136, 124, 27, 0.7);
+}
+#home-link{
+  color:black;
+  margin-left: 5%;
+  border-bottom: 2px solid green;
+  text-decoration: none;
+  transition: 0.2s ease-in;
+}
+#home-link:hover {
+  transition: 0.2s ease-out;
+  transform: scale(1.20);
+}
+#random-link{
+  color:black;
+  margin: 0 3%;
+  border-bottom: 2px solid green;
+  text-decoration: none;
+}
+#random-link:hover{
+  transition: 0.2s ease-out;
+  transform: scale(1.20);
+}
+#categories-link{
+  color: black;
+  text-decoration: none;
+  border-bottom: 2px solid green;
+}
+#categories-link:hover{
+  transition: 0.2s ease-out;
+  transform: scale(1.20);
+}
+#img-home{
+  background-image: url("https://www.eatwell101.com/wp-content/uploads/2012/12/healthy-meals-for-the-week.jpg");
+  width: 100%;
+  height: 85vh;
+  min-height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.details-container {
+  padding: 3% 3% !important;
+  border-bottom: 3px solid green;
+}
+.details-container div img{
+  transition: 0.3s ease;
+}
+.details-container:hover div img{
+  transform: scale(1.15);
+  transition: 0.3s ease;
+}
+.details-container div p{
+  text-align: center;
+  font-size: 16px;
+  line-height: 17px;
+  max-height: 64px;
+  font-weight: 800;
+  padding-top: 10px;
+  color:rgba(103, 94, 21, 0.7);
+}
+#ingredients-container{
+  border-bottom: 2px solid green;;
+  width: 40%;
+  font-family: inherit;
+  font-style: italic;
+}
+
+#image-details-container{
+  width: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-self: center;
+}
+table{
+  width: 100%;
+}
+#img-details{
+  width: 250px;
+height: auto;
+border-radius: 50%;
+}
+#meal-name{
+  text-align: center;
+  font-size: 24px;
+  max-height: 64px;
+  font-weight: 800;
+  padding-top: 10px;
+  margin-bottom: 6%;
+  color: rgba(103, 94, 21, 0.7);
+}
+#meal-category{
+  text-align: center;
+  font-size: 18px;
+  line-height: 17px;
+  max-height: 64px;
+  font-weight: 800;
+  padding-top: 10px;
+  color: rgba(103, 94, 21, 0.7);
+}
+th{
+  height: 10vh;
+}
+#instructions-container{
+  font-size: 1.2rem;
+  margin: 5% 5%;
+  font-family: inherit;
+  font-style: italic;
+  font-weight: 500;
+}
+
+#video-container{
+  display: flex;
+  justify-content: center;
+}
+
+#content{
+  margin-top: 8%;
+}
+@media screen and (min-width:500px) and (max-width:1250px) {
+  .title-random-container{
+    width: 60px;
+  }
+  .trios{
+    display: grid;
+    grid-template-columns: 160px 160px 160px;
+    grid-template-rows: 160px 160px 160px 160px 160px;
+    justify-content: center;
+  }
+  .img-item{
+    width: 100px;
+    height: 100px;
+  }
+  .random-item-container{
+    min-width: 50px;
+  }
+  .random-img{
+    width: 100px;
+    height: 80px;
+  }
+  #title-container{
+    font-size: 16px;;
+    width: 25%;
+
+  }
+  #main-container{
+    width: 100%;
+  }
+  #home-link {
+    font-size: 12px;
+    margin: 0 1.5%;
+  }
+  #categories-link{
+    font-size: 12px;
+    margin: 0 1.3%;
+  }
+  #random-link{
+    font-size: 12px;
+    margin: 0 1.3%;
+  }
+#navbar-container{
+  align-items: center;
+  min-width: 650px;
+}
+}

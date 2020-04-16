@@ -1,84 +1,87 @@
 # Meal Recipes
 
-> Project taked from Microverse React Capstone Project
+> Catalogue Recipe of Meals made with REACT from UI,REDUX Store to Manage information data , API Request with  JSON response and everything deployed on Heroku
 
 ### Screenshot
 
-![screenshot](./)
+![screenshot](./src/assets/meals-recipe.gif)
 
 This is a application to save and organize recipes filtering by name and types
 
-## Built With ReactJS
+## Built With:
 
 - Html,Css,JavaScript
 - ReactJS
 - Redux
-- React Routes
+- React Router
 - React Hooks
 - axios Http request
 - Heroku Deploy
 - API Request
+- Bootstrap CDN
+- Axios Http Requests
+- ReactPlayer npm package
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://meals-recipes.herokuapp.com/home)
+
 [Meal Recipes API](https://www.themealdb.com/api.php)
 
 ## Getting Started
 
+This aplication is a Web Single Page made with React JS,Redux and heroku using visual studio Code like developer framework.
+
+this page wants to show a  list of recipes of delicius meals and show it in a friendly and nicely User interface
+
 ### Prerequisites
 
--Before to run this project we need to install npm dependencies with
-```$> npm install```
+- npm version  6.14.4
+- Visual Studio Code
+- Ubuntu OS or Linux distribution
+- Heroku account
 
 ### Setup
 
-To use this repo on your compuer you first need to run this commands:
+To use this project on your computer you first need to copy or download this repository on your computer .
+after downloading the repository we need to run this commands:
+
+To install npm dependencies with
+
+```npm install```
+
+PropTypes npm library:
+
+```npm i -S prop-types ```
+
+React testing library:
+
+```npm install --save-dev @testing-library/react ```
 
 ```
 npm install eslint eslint-config-airbnb --save-dev
-
-npx eslint --init
+npm install --save react-router-dom
 
 ```
-
-### Deployment
-
 after you will need to enter to [Stickler Page](https://stickler-ci.com/) and activate your repository.
 
 To Run the Linter files you will need to run this commands on the terminal :
 
 ```
-`npm install eslint eslint-config-airbnb --save-dev`
-`npx eslint --init`
-```
-
-npx eslint --init, with this configuration:
-
-? How would you like to use ESLint? To check syntax, find problems, and enforce code style
-
-? What type of modules does your project use? JavaScript modules (import/export)
-
-? Which framework does your project use? React
-
-? Does your project use Typescript No
-
-? Where does your code run? Browser
-
-? How would you like to define a style for your project? Use a popular style guide
-
-? Which style guide do you want to follow? Airbnb
-
-? What format do you want your config file to be in? JSON
-
-The config that you've selected requires the following dependencies: ? Would you like to install them now with npm? Yes
-
-after you will need to enter to [Stickler Page](https://stickler-ci.com/) and activate your repository.
-
-**\*\***\*\*\*\***\*\*** Deploy to Heroku with CLI **\*\***\*\*\*\***\*\***
+npm install eslint eslint-config-airbnb --save-dev
+npx eslint --init
 
 ```
 
+if you finish of install all npm dependencies we can run ``` npm test ``` to check that the tests work correctly.
+
+if wvwrything goes well, we can run now ``` npm run start ``` to start the live view from the project on http://localhost:3000
+
+### Deployment
+
+Deploy to Heroku with CLI
+
+```
 git add .
 git commit -m "Start with create-react-app"
 git push heroku master
@@ -91,7 +94,28 @@ heroku open
 
 ```
 
-## Authors
+Deploy made with :
+
+https://github.com/mars/create-react-app-buildpack
+
+## Test
+
+On this project we are going to use [React Testing Library](https://testing-library.com/docs/react-testing-library/setup) to run the tests.
+
+React Testing Library does not require any configuration to be used (React Testing Library does not require that you use Jest).
+
+Global Config
+
+Adding options to your global test config can simplify the setup and teardown of tests in individual files.
+
+to install this library test we need to run this command on terminal folder
+````npm install --save-dev @testing-library/dom````
+
+To run the test created we only need to run this command:
+
+``` npm test ```
+
+## Author
 
 👤 **Cristian Ines Hernandez A. - MephistoDevelop**
 
@@ -112,7 +136,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](lic.url) licensed.
-
-### Author:
-
-[Cristian Ines (MephistoDevelop)](https://github.com/MephistoDevelop)

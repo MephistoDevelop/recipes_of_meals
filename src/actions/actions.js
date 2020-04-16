@@ -1,9 +1,14 @@
 /* eslint-disable arrow-parens */
-const increaseCounter = () => ({
-  type: 'INCREASE',
+const SetCategories = () => ({
+  type: 'SET_CATEGORIES',
 });
 
-const decreaseCounter = () => ({
-  type: 'DECREASE'
+const SetRandom = () => ({
+  type: 'SET_RANDOM',
 });
-export { increaseCounter, decreaseCounter };
+
+const FindMeal = (name) => ({
+  type: 'FIND_MEAL',
+  name,
+});
+export { SetCategories, SetRandom, FindMeal };

@@ -29,6 +29,10 @@
       }
     ],
     "import/no-unresolved": "off",
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ]
   }
 }

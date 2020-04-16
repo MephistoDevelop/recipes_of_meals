@@ -4,7 +4,7 @@
 
 ### Screenshot
 
-![screenshot](./src/assets/meals-recipe.gif)
+![screenshot](./src/assets/meals.gif)
 
 This is a application to save and organize recipes filtering by name and types
 

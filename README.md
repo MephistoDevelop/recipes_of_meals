@@ -1,6 +1,6 @@
 # Meal Recipes
 
-> Project taked from Microverse React Capstone Project
+> Catalogue Recipe of Meals made with REACT from UI,REDUX Store to Manage information data , API Request with  JSON response and everything deployed on Heroku
 
 ### Screenshot
 
@@ -8,7 +8,7 @@
 
 This is a application to save and organize recipes filtering by name and types
 
-## Built With ReactJS
+## Built With:
 
 - Html,Css,JavaScript
 - ReactJS
